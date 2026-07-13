@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Nabeel Zakir | IT & Cybersecurity Portfolio</title>
+    <style>
+        /* Base Styling & Variables */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #0b0f19; color: #c9d1d9; line-height: 1.6; padding: 15px; }
+        
+        /* Layout Container */
+        .container { max-width: 750px; margin: 0 auto; padding: 15px 0; }
+        
+        /* Hero Header Section */
+        header { text-align: center; padding: 40px 15px; border-bottom: 1px solid #1f2937; }
+        h1 { color: #f0f6fc; font-size: 2.2rem; margin-bottom: 8px; font-weight: 700; letter-spacing: -0.5px; }
+        .subtitle { color: #38bdf8; font-size: 1.15rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .bio { max-width: 580px; margin: 0 auto; color: #9ca3af; font-size: 0.95rem; }
+
+        /* Navigation or Quick Links */
+        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
+        .social-links a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 500; border: 1px solid #1e293b; padding: 6px 12px; border-radius: 20px; background: #0f172a; transition: all 0.2s; }
+        .social-links a:hover { background: #38bdf8; color: #0f172a; border-color: #38bdf8; }
+
+        /* Content Sections */
+        section { padding: 35px 15px; border-bottom: 1px solid #1f2937; }
+        h2 { color: #f0f6fc; font-size: 1.5rem; margin-bottom: 20px; position: relative; padding-bottom: 8px; }
+        h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background-color: #38bdf8; border-radius: 2px; }
+
+        /* Visual Skill Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+        .skill-card { background: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 12px; text-align: center; color: #e5e7eb; font-weight: 500; font-size: 0.9rem; }
+        
+        /* Interactive Timeline Items */
+        .timeline { position: relative; border-left: 2px solid #1f2937; padding-left: 20px; margin-left: 5px; }
+        .timeline-item { position: relative; margin-bottom: 30px; }
+        .timeline-item::before { content: ''; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #38bdf8; border: 2px solid #0b0f19; }
+        .item-title { color: #f0f6fc; font-size: 1.15rem; font-weight: 600; }
+        .item-meta { color: #9ca3af; font-size: 0.85rem; margin-bottom: 8px; font-weight: 500; }
+        .item-desc { color: #9ca3af; font-size: 0.9rem; }
+
+        /* Project Cards */
+        .project-card { background: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+        .project-title { color: #38bdf8; font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
+        .project-desc { color: #9ca3af; font-size: 0.9rem; }
+
+        /* Footer Call to Action */
+        footer { text-align: center; padding: 40px 15px 20px 15px; color: #6b7280; font-size: 0.8rem; }
+        .btn { display: inline-block; background-color: #0284c7; color: #ffffff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 15px 0; font-size: 0.9rem; }
+        .btn:hover { background-color: #0369a1; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile & Header Section -->
+        <header>
+            <h1>Syed Nabeel Zakir</h1>
+            <div class="subtitle">IT Specialist & Cybersecurity Professional</div>
+            <p class="bio">Retired naval IT officer specializing in core infrastructure management, systems administration, and robust cybersecurity protocols.</p>
+            <div class="social-links">
+                <a href="https://github.com/your-username" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email Me</a>
+            </div>
+        </header>
+
+        <!-- Technical Skills Grid -->
+        <section id="skills">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">Cybersecurity</div>
+                <div class="skill-card">Systems Admin</div>
+                <div class="skill-card">Infrastructure</div>
+                <div class="skill-card">Network Security</div>
+                <div class="skill-card">Database Mgmt</div>
+                <div class="skill-card">Tech Solutions</div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Timeline -->
+        <section id="experience">
+            <h2>Professional Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="item-title">IT & Cybersecurity Staff Officer</div>
+                    <div class="item-meta">Naval Medical Facility | 2021 — 2025</div>
+                    <p class="item-desc">Managed systems, security updates, server integrity, and infrastructure safety standards across medical networks.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="item-title">Operations & Systems Officer</div>
+                    <div class="item-meta">Maritime Headquarters | 2020 — 2024</div>
+                    <p class="item-desc">Maintained data pathways and supported core communication operations with rigorous network configuration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business & Projects Section -->
+        <section id="projects">
+            <h2>Key Initiatives</h2>
+            <div class="project-card">
+                <div class="project-title">AGK International Solutions</div>
+                <p class="project-desc">Logistics planning, procurement optimization, and physical operational system design consulting.</p>
+            </div>
+        </section>
+
+        <!-- Footer / Contact CTA -->
+        <footer>
+            <p>Interested in collaborating on secure infrastructure or tech management?</p>
+            <a href="mailto:your.email@example.com" class="btn">Get in Touch</a>
+            <p style="margin-top: 25px;">&copy; 2026 Syed Nabeel Zakir. Built for GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
