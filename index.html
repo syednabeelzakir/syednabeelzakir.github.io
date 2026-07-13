@@ -3,113 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syed Nabeel Zakir | IT & Cybersecurity Portfolio</title>
+    <title>Syed Nabeel | Study in USA - F1, F2, B1, B2 Visa Consultant</title>
     <style>
-        /* Base Styling & Variables */
+        /* Base Reset & Colors */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #0b0f19; color: #c9d1d9; line-height: 1.6; padding: 15px; }
+        body { background-color: #0f172a; color: #e2e8f0; line-height: 1.6; }
         
-        /* Layout Container */
-        .container { max-width: 750px; margin: 0 auto; padding: 15px 0; }
+        /* Container */
+        .container { max-width: 650px; margin: 0 auto; padding: 15px; }
+
+        /* Banner & Alert */
+        .deadline-alert { background: linear-gradient(45deg, #ef4444, #b91c1c); color: #fff; text-align: center; padding: 12px; font-weight: 800; font-size: 0.95rem; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3); text-transform: uppercase; letter-spacing: 0.5px; }
         
-        /* Hero Header Section */
-        header { text-align: center; padding: 40px 15px; border-bottom: 1px solid #1f2937; }
-        h1 { color: #f0f6fc; font-size: 2.2rem; margin-bottom: 8px; font-weight: 700; letter-spacing: -0.5px; }
-        .subtitle { color: #38bdf8; font-size: 1.15rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .bio { max-width: 580px; margin: 0 auto; color: #9ca3af; font-size: 0.95rem; }
+        /* Header Card */
+        header { background: #1e293b; border: 1px solid #334155; padding: 30px 20px; border-radius: 12px; text-align: center; margin-bottom: 25px; }
+        .logo-text { color: #ef4444; font-size: 1.8rem; font-weight: 900; letter-spacing: 1px; display: inline-block; margin-bottom: 5px; }
+        .logo-sub { color: #94a3b8; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-top: -5px; margin-bottom: 15px; letter-spacing: 2px; display: block; }
+        h1 { font-size: 2rem; color: #f8fafc; font-weight: 800; margin-bottom: 8px; }
+        .tagline { color: #38bdf8; font-weight: 700; font-size: 1.15rem; margin-bottom: 15px; }
+        .intro-text { color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px; }
 
-        /* Navigation or Quick Links */
-        .social-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
-        .social-links a { color: #38bdf8; text-decoration: none; font-size: 0.9rem; font-weight: 500; border: 1px solid #1e293b; padding: 6px 12px; border-radius: 20px; background: #0f172a; transition: all 0.2s; }
-        .social-links a:hover { background: #38bdf8; color: #0f172a; border-color: #38bdf8; }
+        /* Quick CTA Buttons */
+        .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #22c55e; color: #fff; text-decoration: none; font-weight: 700; padding: 14px 24px; border-radius: 30px; font-size: 1.05rem; width: 100%; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); transition: transform 0.2s; }
+        .cta-btn:active { transform: scale(0.98); }
 
-        /* Content Sections */
-        section { padding: 35px 15px; border-bottom: 1px solid #1f2937; }
-        h2 { color: #f0f6fc; font-size: 1.5rem; margin-bottom: 20px; position: relative; padding-bottom: 8px; }
-        h2::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background-color: #38bdf8; border-radius: 2px; }
+        /* Sections */
+        section { background: #1e293b; border: 1px solid #334155; padding: 25px 20px; border-radius: 12px; margin-bottom: 20px; }
+        h2 { font-size: 1.35rem; color: #f8fafc; margin-bottom: 15px; border-left: 4px solid #ef4444; padding-left: 10px; }
 
-        /* Visual Skill Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
-        .skill-card { background: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 12px; text-align: center; color: #e5e7eb; font-weight: 500; font-size: 0.9rem; }
-        
-        /* Interactive Timeline Items */
-        .timeline { position: relative; border-left: 2px solid #1f2937; padding-left: 20px; margin-left: 5px; }
-        .timeline-item { position: relative; margin-bottom: 30px; }
-        .timeline-item::before { content: ''; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: #38bdf8; border: 2px solid #0b0f19; }
-        .item-title { color: #f0f6fc; font-size: 1.15rem; font-weight: 600; }
-        .item-meta { color: #9ca3af; font-size: 0.85rem; margin-bottom: 8px; font-weight: 500; }
-        .item-desc { color: #9ca3af; font-size: 0.9rem; }
+        /* Grid Lists */
+        .grid-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .grid-item { background: #0f172a; border: 1px solid #334155; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-align: center; color: #cbd5e1; display: flex; align-items: center; justify-content: center; }
 
-        /* Project Cards */
-        .project-card { background: #111827; border: 1px solid #1f2937; border-radius: 8px; padding: 20px; margin-bottom: 15px; }
-        .project-title { color: #38bdf8; font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
-        .project-desc { color: #9ca3af; font-size: 0.9rem; }
+        /* Step-by-Step Pathway */
+        .step { position: relative; padding-left: 25px; margin-bottom: 15px; }
+        .step::before { content: "✓"; position: absolute; left: 0; top: 0; color: #38bdf8; font-weight: 900; }
+        .step-title { font-weight: 700; color: #f1f5f9; font-size: 0.95rem; }
+        .step-desc { font-size: 0.85rem; color: #94a3b8; }
 
-        /* Footer Call to Action */
-        footer { text-align: center; padding: 40px 15px 20px 15px; color: #6b7280; font-size: 0.8rem; }
-        .btn { display: inline-block; background-color: #0284c7; color: #ffffff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 15px 0; font-size: 0.9rem; }
-        .btn:hover { background-color: #0369a1; }
+        /* Partner Universities Grid */
+        .uni-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .uni-card { background: #0f172a; border: 1px solid #1e293b; border-radius: 6px; padding: 8px 5px; text-align: center; font-size: 0.75rem; font-weight: 700; color: #cbd5e1; display: flex; align-items: center; justify-content: center; min-height: 45px; }
+
+        /* Contact Details & Offices */
+        .office-card { background: #0f172a; padding: 12px; border-radius: 8px; border: 1px solid #334155; margin-bottom: 10px; font-size: 0.85rem; }
+        .office-name { font-weight: 700; color: #38bdf8; margin-bottom: 3px; display: flex; align-items: center; gap: 6px; }
+        .office-address { color: #cbd5e1; }
+
+        /* Footer */
+        footer { text-align: center; padding: 25px 10px; color: #64748b; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Profile & Header Section -->
+        
+        <!-- Urgent Deadline Banner -->
+        <div class="deadline-alert">
+            ⚠️ DEADLINE 10 AUGUST 2026: January 2027 Intake!
+        </div>
+
+        <!-- Header Hero Profile -->
         <header>
-            <h1>Syed Nabeel Zakir</h1>
-            <div class="subtitle">IT Specialist & Cybersecurity Professional</div>
-            <p class="bio">Retired naval IT officer specializing in core infrastructure management, systems administration, and robust cybersecurity protocols.</p>
-            <div class="social-links">
-                <a href="https://github.com/your-username" target="_blank">GitHub</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="mailto:your.email@example.com">Email Me</a>
-            </div>
+            <span class="logo-text">ibex</span>
+            <span class="logo-sub">Expressive Education Services</span>
+            <h1>Syed Nabeel</h1>
+            <div class="tagline">Study in USA - Student Visa Advisor</div>
+            <p class="intro-text">
+                Your premier consultant guiding students through every step of USA F1 student visas, F2 spouse visas, and B1/B2 visitor visas. I manage your entire educational path, from applying to landing.
+            </p>
+            <a href="https://wa.me/923379226441?text=Hi%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20the%20USA%20January%202027%20intake." class="cta-btn" target="_blank">
+                💬 Chat on WhatsApp: 03379226441
+            </a>
         </header>
 
-        <!-- Technical Skills Grid -->
-        <section id="skills">
-            <h2>Core Competencies</h2>
-            <div class="skills-grid">
-                <div class="skill-card">Cybersecurity</div>
-                <div class="skill-card">Systems Admin</div>
-                <div class="skill-card">Infrastructure</div>
-                <div class="skill-card">Network Security</div>
-                <div class="skill-card">Database Mgmt</div>
-                <div class="skill-card">Tech Solutions</div>
+        <!-- The Complete Pathway Steps -->
+        <section>
+            <h2>Your End-to-End Visa Journey</h2>
+            <div class="step">
+                <div class="step-title">1. Admissions & Offers</div>
+                <div class="step-desc">University matching and receiving your fast admission Offer Letter.</div>
+            </div>
+            <div class="step">
+                <div class="step-title">2. i20 Issuance</div>
+                <div class="step-desc">Securing and coordinating the official i20 document from US universities.</div>
+            </div>
+            <div class="step">
+                <div class="step-title">3. SEVIS Fee & DS-160</div>
+                <div class="step-desc">Assistance with fee payments and error-free US visa application submission.</div>
+            </div>
+            <div class="step">
+                <div class="step-title">4. Appointment Booking</div>
+                <div class="step-desc">Helping you schedule your priority interview appointments.</div>
+            </div>
+            <div class="step">
+                <div class="step-title">5. Documentation & Interview Prep</div>
+                <div class="step-desc">Complete evaluation and personalized physical interview mock prep sessions.</div>
+            </div>
+            <div class="step">
+                <div class="step-title">6. Pre-Departure & USA Landing</div>
+                <div class="step-desc">Preparation briefing, airport pick-up in the USA, and 2-week free accommodation!</div>
             </div>
         </section>
 
-        <!-- Professional Experience Timeline -->
-        <section id="experience">
-            <h2>Professional Milestones</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="item-title">IT & Cybersecurity Staff Officer</div>
-                    <div class="item-meta">Naval Medical Facility | 2021 — 2025</div>
-                    <p class="item-desc">Managed systems, security updates, server integrity, and infrastructure safety standards across medical networks.</p>
-                </div>
-                <div class="timeline-item">
-                    <div class="item-title">Operations & Systems Officer</div>
-                    <div class="item-meta">Maritime Headquarters | 2020 — 2024</div>
-                    <p class="item-desc">Maintained data pathways and supported core communication operations with rigorous network configuration.</p>
-                </div>
+        <!-- Exclusive Services Grid (From Your Ad Flyer) -->
+        <section>
+            <h2>Our Exclusive Services</h2>
+            <div class="grid-list">
+                <div class="grid-item">Admission on MOI Base</div>
+                <div class="grid-item">Airport Pickup at USA</div>
+                <div class="grid-item">100% Done Base Admission</div>
+                <div class="grid-item">2-Week Free Accommodation</div>
+                <div class="grid-item">Spouse (F2) Visa Assistance</div>
+                <div class="grid-item">2 Free Trips (Uni & Stay)</div>
+                <div class="grid-item">Fees Paid on Arrival</div>
+                <div class="grid-item">Help Secure Campus Jobs</div>
+                <div class="grid-item">Monthly Installments Option</div>
+                <div class="grid-item">Free US Health Insurance</div>
             </div>
         </section>
 
-        <!-- Business & Projects Section -->
-        <section id="projects">
-            <h2>Key Initiatives</h2>
-            <div class="project-card">
-                <div class="project-title">AGK International Solutions</div>
-                <p class="project-desc">Logistics planning, procurement optimization, and physical operational system design consulting.</p>
+        <!-- Partner University Highlights -->
+        <section>
+            <h2>Partner US Universities</h2>
+            <p style="font-size:0.8rem; color:#94a3b8; margin-top:-10px; margin-bottom:15px;">No English Language test certificate required • Gap acceptable • Minimum statement</p>
+            <div class="uni-grid">
+                <div class="uni-card">Monroe University</div>
+                <div class="uni-card">St. Cloud University</div>
+                <div class="uni-card">Uni. of South Carolina</div>
+                <div class="uni-card">Lewis University</div>
+                <div class="uni-card">Pace University</div>
+                <div class="uni-card">Westcliff University</div>
+                <div class="uni-card">DePaul University</div>
+                <div class="uni-card">Uni. of Bridgeport</div>
+                <div class="uni-card">Bay Atlantic University</div>
+                <div class="uni-card">CMU</div>
+                <div class="uni-card">Minnesota State</div>
+                <div class="uni-card">Uni. of New Haven</div>
+                <div class="uni-card">University of Akron</div>
+                <div class="uni-card">Arizona State</div>
+                <div class="uni-card">William Paterson</div>
+                <div class="uni-card">Concordia University</div>
+                <div class="uni-card">Arkansas State</div>
+                <div class="uni-card">Avilla University</div>
             </div>
         </section>
 
-        <!-- Footer / Contact CTA -->
+        <!-- Global Offices Info (From Ad) -->
+        <section>
+            <h2>Contact & Office Locations</h2>
+            
+            <div class="office-card">
+                <div class="office-name">📍 Pakistan Office</div>
+                <div class="office-address"># 01, 1st Floor, Zeb Arcade, G-15 Markaz, Islamabad</div>
+            </div>
+
+            <div class="office-card">
+                <div class="office-name">📍 USA Office</div>
+                <div class="office-address">7105 Villa Park Road, Springfield, VA, US</div>
+            </div>
+
+            <div class="office-card">
+                <div class="office-name">📍 China Office</div>
+                <div class="office-address">Unit 1126, 11th Floor, N-202 Huanshi Xi Road, Yuexiu District, Guangzhou, China</div>
+            </div>
+        </section>
+
+        <!-- Call to Action & Copyright Footer -->
         <footer>
-            <p>Interested in collaborating on secure infrastructure or tech management?</p>
-            <a href="mailto:your.email@example.com" class="btn">Get in Touch</a>
-            <p style="margin-top: 25px;">&copy; 2026 Syed Nabeel Zakir. Built for GitHub Pages.</p>
+            <p>Start your American education journey with peace of mind.</p>
+            <p style="margin-top: 15px; font-weight:700; color:#94a3b8;">&copy; 2026 Syed Nabeel. Powered by GitHub Pages.</p>
         </footer>
     </div>
 
