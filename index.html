@@ -444,6 +444,20 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+         /* Fixes alignment and scales logo safely */
+.logo-box {
+    display: flex;
+    justify-content: flex-start; /* Aligns container content to the far left */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.logo-box img {
+    height: 110px;        /* Increased size for great readability */
+    width: auto;          /* Keeps original proportions crisp */
+    object-fit: contain;
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -458,20 +472,6 @@
         <!-- Header Navigation Area -->
         <header>
             <div class="logo-box">
-  /* Fixes alignment and scales logo safely */
-.logo-box {
-    display: flex;
-    justify-content: flex-start; /* Aligns container content to the far left */
-    width: 100%;
-    padding: 10px 0;
-}
-
-.logo-box img {
-    height: 110px;        /* Increased size for great readability */
-    width: auto;          /* Keeps original proportions crisp */
-    object-fit: contain;
-    display: block;
-}
                 <img src="logo.png" alt="Ibex Overseas Education Services Logo">
             </div>
             <div class="nav-actions">
