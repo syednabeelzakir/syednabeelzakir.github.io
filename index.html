@@ -23,34 +23,7 @@
             --card-shadow: 0 10px 30px -10px rgba(13, 71, 161, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-/* Clean White Section Background */
-.partners-section {
-    background-color: #fefefe; /* Seamless blend with your body background */
-    padding: 40px 20px;
-    text-align: center;
-}
 
-/* Light Blue Border Frame Box Limited strictly to the University Grid Image */
-.partners-container {
-    max-width: 800px;         /* Keeps the frame tight and readable */
-    margin: 20px auto 0 auto;  /* Centers the box horizontally */
-    background-color: #e6f0fa; /* Soft light blue limited precisely to the image context */
-    border: 1px solid #cce0f5; /* Subtle border framing for depth */
-    border-radius: 12px;       /* Sleek, modern rounded corners */
-    padding: 16px;             /* Clean spacing around your white image */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Extremely soft shadow for polish */
-}
-
-/* Forces the partner image to adapt inside the new frame */
-.partners-container img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    border-radius: 6px;        /* Slightly rounds the white image corners to match */
         * { 
             box-sizing: border-box; 
             margin: 0; 
@@ -304,23 +277,35 @@
             border-color: var(--primary);
         }
 
-        /* Partners Area */
+        /* Symmetrical White Partners Area */
         .partners-section {
-            background: var(--bg-light);
+            background-color: #fefefe;
             border-radius: 20px;
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
             margin-bottom: 60px;
+        }
+
+        /* Balanced Proportion University Container */
+        .partners-container {
+            max-width: 550px; 
+            margin: 20px auto 0 auto;
+            background-color: #fefefe;
             border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--card-shadow);
         }
 
         .partners-container img {
             width: 100%;
-            max-width: 900px;
+            max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            margin-top: 20px;
-            box-shadow: var(--card-shadow);
+            display: block;
+            object-fit: contain;
         }
 
         /* Offices and Contact Card */
@@ -389,11 +374,11 @@
             margin-top: 60px;
         }
 
-        /* --- Tablet & Mobile Responsiveness Media Queries --- */
+        /* --- Comprehensive Cross-Device Adaptability --- */
         @media (max-width: 992px) {
             .hero-section {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 40px;
             }
             .hero-content {
                 order: 2;
@@ -401,6 +386,8 @@
             }
             .advisor-card {
                 order: 1;
+                max-width: 500px;
+                margin: 0 auto;
             }
         }
 
@@ -408,21 +395,35 @@
             .grid-container {
                 grid-template-columns: 1fr;
             }
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .partners-container {
+                max-width: 100%;
+                padding: 16px;
+            }
         }
 
         @media (max-width: 480px) {
             .main-container {
                 padding: 25px 15px;
             }
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
             .advisor-card {
-                padding: 24px 15px;
+                padding: 30px 16px;
+                width: 100%;
             }
             .advisor-img {
-                width: 130px;
-                height: 130px;
+                width: 140px;
+                height: 140px;
+            }
+            .advisor-card h1 {
+                font-size: 1.8rem;
             }
             .perks-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -523,7 +524,6 @@
                 <p>Accepting gap years, flexible bank statements, mature age limits, and zero initial tuition deposits.</p>
             </div>
             <div class="partners-container">
-                <!-- Updated extension from .jpg to .jpeg -->
                 <img src="1000568366.jpeg" alt="Partner Universities of USA">
             </div>
         </div>
