@@ -23,20 +23,34 @@
             --card-shadow: 0 10px 30px -10px rgba(13, 71, 161, 0.08);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-/* Styling to ensure the partner university image displays properly */
-.partners-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
+/* Clean White Section Background */
+.partners-section {
+    background-color: #fefefe; /* Seamless blend with your body background */
+    padding: 40px 20px;
+    text-align: center;
 }
 
+/* Light Blue Border Frame Box Limited strictly to the University Grid Image */
+.partners-container {
+    max-width: 800px;         /* Keeps the frame tight and readable */
+    margin: 20px auto 0 auto;  /* Centers the box horizontally */
+    background-color: #e6f0fa; /* Soft light blue limited precisely to the image context */
+    border: 1px solid #cce0f5; /* Subtle border framing for depth */
+    border-radius: 12px;       /* Sleek, modern rounded corners */
+    padding: 16px;             /* Clean spacing around your white image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Extremely soft shadow for polish */
+}
+
+/* Forces the partner image to adapt inside the new frame */
 .partners-container img {
     max-width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
-}
+    border-radius: 6px;        /* Slightly rounds the white image corners to match */
         * { 
             box-sizing: border-box; 
             margin: 0; 
