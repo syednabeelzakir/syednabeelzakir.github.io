@@ -458,6 +458,12 @@
         <!-- Header Navigation Area -->
         <header>
             <div class="logo-box">
+                .logo-box img {
+    max-height: 60px; /* Restricts the height so it fits in the header corner */
+    width: auto;      /* Keeps the original proportions perfect without stretching */
+    object-fit: contain;
+    display: block;
+}
                 <img src="logo.png" alt="Ibex Overseas Education Services Logo">
             </div>
             <div class="nav-actions">
