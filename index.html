@@ -38,59 +38,11 @@
             overflow-x: hidden;
         }
 
-        /* Top Notification Banner */
-        .deadline-banner {
-            background: linear-gradient(135deg, var(--secondary), #b71c1c);
-            color: #ffffff;
-            text-align: center;
-            padding: 10px 15px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.2);
-        }
-
         /* Main Wrapper */
         .main-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* Navigation Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-        }
-
-        /* Fixed: Defined outside media queries so it works globally */
-        .logo-box {
-            display: flex;
-            justify-content: flex-start; /* Aligns container content to the far left */
-            align-items: center;
-            width: auto;
-            padding: 10px 0;
-        }
-
-        .logo-box img {
-            height: 110px;        /* Increased size for great readability */
-            width: auto;          /* Keeps original proportions crisp */
-            object-fit: contain;
-            display: block;
-        }
-
-        .nav-actions {
-            display: flex;
-            gap: 15px;
-            align-items: center;
+            padding: 40px 20px;
         }
 
         /* Hero / Advisor Section */
@@ -426,18 +378,6 @@
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .logo-box {
-                justify-content: center; /* Centered only on tablets/mobile screens for balance */
-            }
-            .nav-actions {
-                width: 100%;
-                justify-content: center;
-            }
             .grid-container {
                 grid-template-columns: 1fr;
             }
@@ -445,7 +385,7 @@
 
         @media (max-width: 480px) {
             .main-container {
-                padding: 15px;
+                padding: 25px 15px;
             }
             .advisor-card {
                 padding: 24px 15px;
@@ -457,27 +397,12 @@
             .perks-grid {
                 grid-template-columns: 1fr 1fr;
             }
-        } /* Properly closed this media query bracket */
+        }
     </style>
 </head>
 <body>
 
-    <!-- Urgent Countdown Alert Banner -->
-    <div class="deadline-banner">
-        ⚠️ DEADLINE 10 AUGUST 2026: Apply Now for January 2027 Intake!
-    </div>
-
     <div class="main-container">
-        
-        <!-- Header Navigation Area -->
-        <header>
-            <div class="logo-box">
-                <img src="logo.png" alt="Ibex Overseas Education Services Logo">
-            </div>
-            <div class="nav-actions">
-                <a href="https://wa.me/923379226441" class="btn btn-primary" target="_blank" style="padding: 10px 20px;">Get Free Assessment</a>
-            </div>
-        </header>
 
         <!-- Dynamic Hero Section Layout -->
         <div class="hero-section">
@@ -493,11 +418,11 @@
             </div>
 
             <!-- Advisor Profile Card -->
-<div class="advisor-card">
-    <div class="avatar-wrapper">
-        <img src="syednabeel.jpeg" alt="Syed Nabeel" class="advisor-img">
-    </div>
-    <h1>Syed Nabeel</h1>
+            <div class="advisor-card">
+                <div class="avatar-wrapper">
+                    <img src="syednabeel.jpeg" alt="Syed Nabeel" class="advisor-img">
+                </div>
+                <h1>Syed Nabeel</h1>
                 <div class="tagline">Senior Student Advisor & Visa Expert</div>
                 <p class="intro-text">
                     Specializing in F1 Academic, F2 Spouse, and B1/B2 Tourist visas. Securing admissions with proven mock prep and airport-to-dorm support.
