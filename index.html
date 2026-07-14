@@ -71,15 +71,26 @@
             margin-bottom: 40px;
         }
 
-        .logo-box img {
-            max-height: 65px;
+        /* Fixed: Defined outside media queries so it works globally */
+        .logo-box {
+            display: flex;
+            justify-content: flex-start; /* Aligns container content to the far left */
+            align-items: center;
             width: auto;
+            padding: 10px 0;
+        }
+
+        .logo-box img {
+            height: 110px;        /* Increased size for great readability */
+            width: auto;          /* Keeps original proportions crisp */
             object-fit: contain;
+            display: block;
         }
 
         .nav-actions {
             display: flex;
             gap: 15px;
+            align-items: center;
         }
 
         /* Hero / Advisor Section */
@@ -420,6 +431,9 @@
                 gap: 15px;
                 text-align: center;
             }
+            .logo-box {
+                justify-content: center; /* Centered only on tablets/mobile screens for balance */
+            }
             .nav-actions {
                 width: 100%;
                 justify-content: center;
@@ -443,21 +457,7 @@
             .perks-grid {
                 grid-template-columns: 1fr 1fr;
             }
-        }
-         /* Fixes alignment and scales logo safely */
-.logo-box {
-    display: flex;
-    justify-content: flex-start; /* Aligns container content to the far left */
-    width: 100%;
-    padding: 10px 0;
-}
-
-.logo-box img {
-    height: 110px;        /* Increased size for great readability */
-    width: auto;          /* Keeps original proportions crisp */
-    object-fit: contain;
-    display: block;
-}
+        } /* Properly closed this media query bracket */
     </style>
 </head>
 <body>
