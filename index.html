@@ -458,9 +458,17 @@
         <!-- Header Navigation Area -->
         <header>
             <div class="logo-box">
-                .logo-box img {
-    max-height: 75px; /* Restricts the height so it fits in the header corner */
-    width: auto;      /* Keeps the original proportions perfect without stretching */
+  /* Fixes alignment and scales logo safely */
+.logo-box {
+    display: flex;
+    justify-content: flex-start; /* Aligns container content to the far left */
+    width: 100%;
+    padding: 10px 0;
+}
+
+.logo-box img {
+    height: 110px;        /* Increased size for great readability */
+    width: auto;          /* Keeps original proportions crisp */
     object-fit: contain;
     display: block;
 }
