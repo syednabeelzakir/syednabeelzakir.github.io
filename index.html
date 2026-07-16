@@ -957,12 +957,188 @@
                 </div>
 
                 <!-- Hungary Card -->
-                <div class="country-card">
+                <div class="country-card" id="hungary-card">
                     <div class="country-flag">🇭🇺</div>
                     <span class="country-badge">Schengen Access</span>
                     <h3>Hungary</h3>
                     <p>Affordable European education offering Schengen access, English-taught programs, and highly viable scholarship routes.</p>
-                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20Hungary." class="btn btn-outline" target="_blank">Inquire for Hungary</a>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('hungary-inner-briefcase', this)">
+                        Open Hungary Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated Hungary Briefcase -->
+                    <div id="hungary-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- Hungary Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🇭🇺 Why Study in Hungary? (Key Benefits)</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.95rem;">Hungary is emerging as one of Europe's top education destinations, providing an excellent balance of quality and cost.</p>
+                                        <ul class="bullet-list">
+                                            <li><strong>World-Class Education:</strong> Access highly regarded learning setups right in the heart of Europe.</li>
+                                            <li><strong>Budget-Friendly:</strong> Enjoy exceptionally low tuition fees alongside affordable living costs.</li>
+                                            <li><strong>Global Versatility:</strong> Learn via structured, English-taught programs across all degree levels.</li>
+                                            <li><strong>Travel Opportunities:</strong> Gain full Schengen visa access to easily travel across any European country.</li>
+                                            <li><strong>Cultural Enrichment:</strong> Immerse yourself in historically rich, safe, and vibrant student-friendly cities like Budapest, Debrecen, and Pécs.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Partner Universities & Popular Courses</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Hungarian Universities We Work With:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>International Business School (IBS), Budapest</li>
+                                            <li>Budapest Metropolitan University (METU)</li>
+                                            <li>University of Pécs</li>
+                                            <li>University of Debrecen</li>
+                                            <li>Széchenyi István University (Győr)</li>
+                                            <li>Corvinus University of Budapest</li>
+                                            <li>Hungarian University of Sports Sciences</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Popular Programs Chosen by Our Students:</h4>
+                                        <ul class="bullet-list">
+                                            <li>Business & Management</li>
+                                            <li>Marketing & International Relations</li>
+                                            <li>Data Science, AI & Computer Science</li>
+                                            <li>Health Sciences & Public Health</li>
+                                            <li>Engineering (Electrical, Mechanical, Civil)</li>
+                                            <li>Sports Sciences & Coaching</li>
+                                            <li>Tourism & Hospitality</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Tuition Fees, Scholarships & Living Costs</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Tuition Structure (per Semester):</h4>
+                                        <table class="briefcase-table" style="margin-bottom: 25px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Program</th>
+                                                    <th>Cost (per Semester / Total)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Bachelor's</strong></td>
+                                                    <td>€2,500 – €4,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Master's</strong></td>
+                                                    <td>€2,600 – €4,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Foundation / Pathway</strong></td>
+                                                    <td>€2,900 – €6,000 (Total)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Average Consultancy Fee</strong></td>
+                                                    <td>PKR 70,000 – €500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Available Scholarships:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 25px;">
+                                            <li>University-specific merit scholarships.</li>
+                                            <li>Early payment tuition discounts (We assist students in applying for all eligible opportunities).</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living in Hungary (Total budget: €300 - €500):</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Expense Category</th>
+                                                    <th>Estimated Cost (per month)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Accommodation</strong></td>
+                                                    <td>€100 – €300 (Shared/Private)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Meals & Transport</strong></td>
+                                                    <td>€100 – €150</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Student Discounts</strong></td>
+                                                    <td>Highly active & accessible for local transport & national museums</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 4 -->
+                            <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
+                            <div class="briefcase-content">
+                                <div class="briefcase-inner">
+                                    <h4 style="color: var(--primary); margin-bottom: 10px;">English Language Benchmarks:</h4>
+                                    <ul class="bullet-list">
+                                        <li><strong>Internal Evaluation:</strong> Many universities readily accept customized internal English tests or online interviews.</li>
+                                        <li><strong>IELTS:</strong> Scores of 5.5 – 6.0 are widely accepted by select institutions.</li>
+                                        <li><strong>Duolingo:</strong> Accepted by several universities across major programs.</li>
+                                        <li><em>We carefully guide you to the perfect university path based on your existing profile.</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 5 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Step-by-Step Simple Visa Process</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">How We Support Your Visa Success:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Offer Letter coordination directly from your target Hungarian University.</li>
+                                            <li>Comprehensive, compliant Visa Application Support from start to finish.</li>
+                                            <li>Fast-track appointment booking with the Hungarian Embassy.</li>
+                                            <li>Thorough, meticulous Bank Statement & Financial Document Guidance.</li>
+                                            <li>Mandatory European Medical Insurance coordination.</li>
+                                            <li>Mock Prep for your formal Embassy Interview.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Crucial Visa Parameters:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>Bank Statement Required:</strong> Minimum €10,000 maintained for 6 to 8 months.</li>
+                                            <li><strong>Visa Fee:</strong> €80 (payable in cash directly at the Embassy).</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Part-Time Work While Studying:</h4>
+                                        <ul class="bullet-list">
+                                            <li>Earn money and gain local work experience with up to 20 hours/week during studies.</li>
+                                            <li>Work full-time during official semester holidays to support your living expenses.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 6 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">⚠️ Common Mistakes to Avoid (We Prevent These!)</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Incomplete or unorganized visa files.</li>
+                                            <li>Choosing the incorrect program or mismatching university tracks.</li>
+                                            <li>Missing critical admission and embassy deadlines.</li>
+                                            <li>Weak, generic Statement of Purpose (SOP) or motivation letters.</li>
+                                            <li>Improper maintenance of crucial bank statement timelines and financial records.</li>
+                                        </ul>
+                                        <p style="color: var(--primary); font-weight: 700;">Our expert consultancy team guarantees total oversight to safeguard your application from all these common errors!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
