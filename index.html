@@ -8,13 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Modern Reset & Variables - Redefined for a Premium Global Aesthetic */
+        /* Modern Reset & Variables - Premium Global Aesthetic */
         :root {
             --primary: #0f172a;          /* Slate Navy - Represents Global Authority & Trust */
             --primary-light: #1e293b;    /* Charcoal Navy */
             --secondary: #0d9488;        /* Vivid Teal - Accent color signaling growth & clarity */
             --accent: #0f766e;           /* Deep Teal */
             --whatsapp: #22c55e;         /* Direct Action Green */
+            --whatsapp-hover: #16a34a;   /* Darker Green */
             --text-main: #334155;        /* Soft Charcoal */
             --text-muted: #64748b;       /* Cool Gray */
             --bg-light: #f8fafc;         /* Light Ice Gray */
@@ -59,7 +60,7 @@
         /* Hero / Advisor Section */
         .hero-section {
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1.1fr 0.9fr;
             gap: 40px;
             align-items: center;
             margin-bottom: 60px;
@@ -69,7 +70,7 @@
             background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 24px;
-            padding: 40px;
+            padding: 40px 30px;
             text-align: center;
             box-shadow: var(--card-shadow);
             position: relative;
@@ -93,8 +94,8 @@
         }
 
         .advisor-img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #ffffff;
@@ -102,7 +103,7 @@
         }
 
         .advisor-card h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             color: var(--primary);
             font-weight: 800;
             margin-bottom: 5px;
@@ -111,7 +112,7 @@
         .tagline {
             color: var(--secondary);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 15px;
@@ -119,9 +120,52 @@
 
         .intro-text {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             max-width: 550px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
+        }
+
+        /* Trust & Success Counter Section inside card */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+            padding: 15px 10px;
+            background: var(--bg-light);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-top: 4px;
+            display: inline-block;
+        }
+
+        /* Compact Interactive Actions Group */
+        .profile-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
         }
 
         /* Hero Pitch */
@@ -153,9 +197,8 @@
             gap: 10px;
             text-decoration: none;
             font-weight: 700;
-            padding: 16px 28px;
             border-radius: 12px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: var(--transition);
             cursor: pointer;
             border: none;
@@ -173,30 +216,88 @@
             box-shadow: 0 12px 24px rgba(13, 148, 136, 0.3);
         }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(34, 197, 94, 0.3);
-        }
-
         .btn-outline {
             border: 2px solid var(--border-color);
             color: var(--primary);
             background: transparent;
-            width: 100%;
+            padding: 14px 24px;
+            flex-grow: 1;
         }
 
         .btn-outline:hover {
             background: var(--bg-light);
             border-color: var(--secondary);
             color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Highly Professional Circular Call Button */
+        .btn-circular-call {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .btn-circular-call:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px) rotate(15deg);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
+        }
+
+        /* Floating Modern Interactive WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+            z-index: 9999;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulse-ring 2s infinite;
+        }
+
+        .floating-whatsapp svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+            transition: var(--transition);
+        }
+
+        .floating-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 12px 30px rgba(34, 197, 94, 0.5);
+        }
+
+        /* Pulse Ring Animation for WhatsApp */
+        @keyframes pulse-ring {
+            0% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
         }
 
         /* Country Destinations Grid */
@@ -601,16 +702,32 @@
                 width: 100%;
             }
             .advisor-img {
-                width: 140px;
-                height: 140px;
+                width: 130px;
+                height: 130px;
             }
             .advisor-card h1 {
                 font-size: 1.8rem;
+            }
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .floating-whatsapp svg {
+                width: 26px;
+                height: 26px;
             }
         }
     </style>
 </head>
 <body>
+
+    <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20higher%20education%20abroad." class="floating-whatsapp" target="_blank" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.592 1.971 14.12 1.137 11.491 1.137c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.475 3.39 1.374 4.877L1.935 21.84l6.112-1.586zM18.29 15.01c-.334-.167-1.97-.975-2.279-1.087-.31-.113-.535-.167-.76.167-.224.334-.87 1.087-1.066 1.311-.197.225-.394.25-.727.083-.334-.167-1.41-.521-2.685-1.658-1.01-.9-1.691-2.013-1.89-2.348-.197-.334-.021-.514.145-.68.15-.148.334-.39.5-.584.167-.195.223-.334.334-.556.112-.224.056-.417-.028-.584-.084-.167-.76-1.837-1.042-2.516-.275-.662-.553-.573-.76-.583-.197-.01-.422-.01-.647-.01-.225 0-.59.084-.9.417-.311.334-1.18 1.153-1.18 2.81s1.21 3.255 1.378 3.478c.168.224 2.38 3.635 5.766 5.098.805.348 1.433.555 1.924.711.809.257 1.545.221 2.127.135.649-.097 1.97-.807 2.25-1.587.28-.779.28-1.448.197-1.587-.083-.14-.308-.224-.642-.39z"/>
+        </svg>
+    </a>
 
     <div class="top-quote-banner">
         Your global future is waiting. Let's make it happen.
@@ -636,12 +753,30 @@
                 <p class="intro-text">
                     Specializing in high-yield student visas, spouse visas, and tourist profiles. Providing personalized profile building and mock prep for key global destinations.
                 </p>
-                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20higher%20education%20abroad." class="btn btn-whatsapp" target="_blank">
-                    💬 Message on WhatsApp
-                </a>
-                <a href="tel:+923379226441" class="btn btn-outline">
-                    📞 Call: 03379226441
-                </a>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">127+</span>
+                        <span class="stat-label">Destinations<br>Reached</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Visa Success<br>Rate</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">$0</span>
+                        <span class="stat-label">Advance Deposit<br>Options</span>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <a href="tel:+923379226441" class="btn btn-outline">
+                        📞 Call: 03379226441
+                    </a>
+                    <a href="tel:+923379226441" class="btn-circular-call" title="Direct Call Now">
+                        📞
+                    </a>
+                </div>
             </div>
 
         </div>
