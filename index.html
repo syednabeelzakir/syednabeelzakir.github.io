@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibex Overseas Education Services | Study in the USA</title>
+    <title>Study Abroad with Syed Nabeel | Global Education Services</title>
     <!-- Google Fonts for Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +36,51 @@
             color: var(--text-main); 
             line-height: 1.6; 
             overflow-x: hidden;
+        }
+
+        /* Navigation Header */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
 
         /* Main Wrapper */
@@ -183,6 +228,66 @@
             background: var(--bg-light);
             border-color: var(--primary);
             color: var(--primary);
+        }
+
+        /* NEW: Country Destinations Grid */
+        .destinations-section {
+            margin-bottom: 60px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .country-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .country-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(13, 71, 161, 0.1);
+        }
+
+        .country-flag {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .country-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .country-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .country-badge {
+            background: rgba(13, 71, 161, 0.08);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         /* Associated Firms Section styling */
@@ -482,17 +587,29 @@
 </head>
 <body>
 
+    <!-- Sticky Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-text">Study Abroad with Syed Nabeel</a>
+            <ul class="nav-links">
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#offices">Offices</a></li>
+            </ul>
+        </div>
+    </header>
+
     <div class="main-container">
 
         <!-- Dynamic Hero Section Layout -->
         <div class="hero-section">
             
             <div class="hero-content">
-                <h2>Your Journey To <span>Study In USA</span> Starts Here</h2>
+                <h2>Your Journey To <span>Global Education</span> Starts Here</h2>
                 <p class="hero-desc">
-                    Navigating admissions, scholarship procurement, and F-1 visa profiling. We provide complete, secure end-to-end relocation consulting to ensure your American dream becomes a reality.
+                    Expertly navigating admissions, visa processing, and entry profiles for elite world destinations. We provide secure, end-to-end consulting to ensure your study plans are a complete success.
                 </p>
-                <a href="https://wa.me/923379226441?text=Hello%20Ibex%20Overseas,%20I'm%20interested%20in%20applying%20for%20the%20USA%20January%202027%20intake." class="btn btn-primary" target="_blank">
+                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I%20am%20interested%20in%20applying%20for%20global%20study%20options." class="btn btn-primary" target="_blank">
                     Explore Admissions Options &rarr;
                 </a>
             </div>
@@ -505,9 +622,9 @@
                 <h1>Syed Nabeel</h1>
                 <div class="tagline">Senior Student Advisor & Visa Expert</div>
                 <p class="intro-text">
-                    Specializing in F1 Academic, F2 Spouse, and B1/B2 Tourist visas. Securing admissions with proven mock prep and airport-to-dorm support.
+                    Specializing in high-yield student visas, spouse visas, and tourist profiles. Providing personalized profile building and mock prep for key global destinations.
                 </p>
-                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20the%20USA%20January%202027%20intake." class="btn btn-whatsapp" target="_blank">
+                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20higher%20education%20abroad." class="btn btn-whatsapp" target="_blank">
                     💬 Message on WhatsApp
                 </a>
                 <a href="tel:+923379226441" class="btn btn-outline">
@@ -515,6 +632,43 @@
                 </a>
             </div>
 
+        </div>
+
+        <!-- NEW: Destination Selector Section -->
+        <div class="destinations-section" id="destinations">
+            <div class="section-header">
+                <h2>🌍 Choose Your Destination</h2>
+                <p>We actively process secure pathways, admissions, and visas for these key global options.</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <!-- United States Card -->
+                <div class="country-card">
+                    <div class="country-flag">🇺🇸</div>
+                    <span class="country-badge">Top Choice</span>
+                    <h3>United States</h3>
+                    <p>F-1 Academic & Spouse pathways. Secure admissions with $0 advance tuition deposit options and outstanding mock prep.</p>
+                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20the%20USA." class="btn btn-outline" target="_blank">Learn More</a>
+                </div>
+
+                <!-- United Kingdom Card -->
+                <div class="country-card">
+                    <div class="country-flag">🇬🇧</div>
+                    <span class="country-badge">Fast Track</span>
+                    <h3>United Kingdom</h3>
+                    <p>Premium global degrees with direct placements, fast-tracked CAS, and options for dependents/post-study work visas.</p>
+                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20the%20UK." class="btn btn-outline" target="_blank">Learn More</a>
+                </div>
+
+                <!-- Hungary Card -->
+                <div class="country-card">
+                    <div class="country-flag">🇭🇺</div>
+                    <span class="country-badge">Schengen Access</span>
+                    <h3>Hungary</h3>
+                    <p>Affordable European education offering Schengen access, English-taught programs, and highly viable scholarship routes.</p>
+                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20Hungary." class="btn btn-outline" target="_blank">Learn More</a>
+                </div>
+            </div>
         </div>
 
         <!-- Associated Organizations Section -->
@@ -537,36 +691,36 @@
             </div>
         </div>
 
-        <!-- Premium General Features Grid -->
-        <div class="grid-container">
+        <!-- Premium General Features Grid (Globalized) -->
+        <div class="grid-container" id="services">
             
             <!-- Admission Features -->
             <div class="feature-card">
                 <h3>🏛️ Admissions & Scholarships</h3>
                 <ul class="bullet-list">
-                    <li><strong>English Language Waivers:</strong> Secure admissions without IELTS via Medium of Instruction (MOI) certificates.</li>
-                    <li><strong>Active Scholarship Aid:</strong> Access merit scholarships ranging from $10,000 to $15,000 per annum automatically.</li>
-                    <li><strong>No Upfront Tuition:</strong> Pay your primary university tuition fee plans safely after arriving in the USA.</li>
+                    <li><strong>English Language Waivers:</strong> Secure placement options using MOI certificates if you don't have IELTS.</li>
+                    <li><strong>Merit Scholarship Aid:</strong> Access direct university scholarships to reduce your tuition fees.</li>
+                    <li><strong>Flexible Admission Profiles:</strong> Open options for gaps, mature-age students, and various credit profiles.</li>
                 </ul>
             </div>
 
             <!-- Travel & Landing Services -->
             <div class="feature-card">
-                <h3>✈️ Arrival & Post-Landing Perks</h3>
+                <h3>✈️ Arrival & On-Ground Support</h3>
                 <ul class="bullet-list">
-                    <li><strong>Airport Pickups:</strong> Coordinated landing transport directly from the local US airport.</li>
-                    <li><strong>Free Initial Housing:</strong> Enjoy up to 10–14 days of free temporary accommodation and local transit assistance.</li>
-                    <li><strong>On-Ground Job Help:</strong> Dedicated local assistance looking for part-time/CPT/OPT student job setups.</li>
+                    <li><strong>Airport Handover:</strong> Secure transitions with pre-coordinated airport pick-up services.</li>
+                    <li><strong>Accommodations Assistance:</strong> Help locking in short or long-term housing arrangements safely.</li>
+                    <li><strong>On-Ground Orientation:</strong> Integration guidance to help you navigate local travel, work permissions, and study rules.</li>
                 </ul>
             </div>
 
             <!-- Visa Privilege Services -->
             <div class="feature-card">
-                <h3>🛂 Visa Excellence Support</h3>
+                <h3>🛂 Visa Preparation Excellence</h3>
                 <ul class="bullet-list">
-                    <li><strong>Spouse (F2) Options:</strong> Expert assistance for bringing your dependents with you seamlessly.</li>
-                    <li><strong>Exclusive Mock Prep:</strong> Comprehensive simulated visa officer interview preparation to ensure high success rates.</li>
-                    <li><strong>Flexible Document Profiles:</strong> Low bank statement seasoning & mature gap limit acceptance.</li>
+                    <li><strong>Spouse & Dependent Setup:</strong> Professional profiles built to ensure smooth spouse visa integration.</li>
+                    <li><strong>Rigorous Mock Interviews:</strong> Complete mock preparation simulating actual embassy environments.</li>
+                    <li><strong>Financial Profile Structuring:</strong> Expert oversight to ensure your bank and security statements comply perfectly.</li>
                 </ul>
             </div>
 
@@ -579,14 +733,14 @@
         </div>
 
         <div class="perks-grid">
-            <div class="perk-item">MOI-Based Admissions</div>
-            <div class="perk-item">F2 Spouse Prep</div>
-            <div class="perk-item">Free Airport Pickup</div>
-            <div class="perk-item">US Health Insurance</div>
-            <div class="perk-item">Post-Arrival Stays</div>
-            <div class="perk-item">Job Search Help</div>
-            <div class="perk-item">Zero Advance Tuition</div>
-            <div class="perk-item">Flexible Payments</div>
+            <div class="perk-item">IELTS/MOI Admissions</div>
+            <div class="perk-item">Spouse & Dependent Prep</div>
+            <div class="perk-item">Airport Pickup Coordination</div>
+            <div class="perk-item">Health Insurance Setup</div>
+            <div class="perk-item">Accommodation Guidance</div>
+            <div class="perk-item">Arrival On-Ground Help</div>
+            <div class="perk-item">Flexible Tuition Plans</div>
+            <div class="perk-item">Schengen Access (Hungary)</div>
         </div>
 
         <!-- Partner Universities Area -->
@@ -604,27 +758,27 @@
         <div class="faq-section">
             <div class="section-header" style="text-align: left;">
                 <h2>Frequently Asked Questions</h2>
-                <p>Crucial guidelines for your United States study plans.</p>
+                <p>Crucial guidelines for your international study plans.</p>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Do I absolutely need IELTS/TOEFL to study in the USA?</div>
-                <div class="faq-answer">No. Many of our partner universities accept a Medium of Instruction (MOI) certificate from your previous school/university as proof of English proficiency.</div>
+                <div class="faq-question">Do I absolutely need IELTS/TOEFL to study abroad?</div>
+                <div class="faq-answer">Not always. For several partners in the USA, UK, and Hungary, we can utilize a Medium of Instruction (MOI) certificate from your previous institution as proof of English proficiency.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">What are the initial university deposit requirements?</div>
-                <div class="faq-answer">We secure admissions in programs with $0 initial tuition deposits before departure. Your academic tuition is paid locally in the USA after landing.</div>
+                <div class="faq-question">What makes Hungary a great option?</div>
+                <div class="faq-answer">Hungary offers high-quality, English-taught degree programs with much lower living and tuition costs compared to Western Europe. Plus, a Hungarian student visa grants you access to the entire Schengen zone!</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-question">Can I travel with my spouse and children?</div>
-                <div class="faq-answer">Yes, through the F2 visa path. We assist you through simultaneous or subsequent dependent filing with full visa interview training for both partners.</div>
+                <div class="faq-question">Can I travel and apply with my spouse?</div>
+                <div class="faq-answer">Yes, especially for major programs in countries like the USA and UK that allow dependent configurations. We handle full profiling for subsequent or simultaneous dependent visas.</div>
             </div>
         </div>
 
         <!-- Offices Network Section -->
-        <div class="section-header">
+        <div class="section-header" id="offices">
             <h2>📍 Our Global Office Network</h2>
             <p>Get in touch or visit any of our local branches for an in-person diagnostic assessment.</p>
         </div>
@@ -651,7 +805,7 @@
 
         <!-- Footer -->
         <footer>
-            <p>Are you ready to build your profile? Let's get your US visa timeline moving today.</p>
+            <p>Are you ready to build your profile? Let's get your visa timeline moving today.</p>
             <p style="margin-top: 20px; font-weight:800; font-size: 1.15rem; color: var(--primary);">Study Abroad with Syed Nabeel</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase;">Connecting Dreams to Destinations</p>
         </footer>
