@@ -185,6 +185,52 @@
             color: var(--primary);
         }
 
+        /* Associated Firms Section styling */
+        .associations-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .associations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+        }
+
+        .firm-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .firm-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+            box-shadow: 0 15px 35px -10px rgba(13, 71, 161, 0.12);
+        }
+
+        .firm-logo {
+            height: 85px;
+            max-width: 100%;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .firm-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
         /* Grid Services Layout */
         .grid-container {
             display: grid;
@@ -395,6 +441,10 @@
             .grid-container {
                 grid-template-columns: 1fr;
             }
+            .associations-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
             .perks-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -463,6 +513,26 @@
                 </a>
             </div>
 
+        </div>
+
+        <!-- Associated Organizations Section -->
+        <div class="associations-section">
+            <div class="section-header">
+                <h2>Associated Organizations</h2>
+                <p>Leading consulting platforms assisting you throughout your path of international relocation.</p>
+            </div>
+            <div class="associations-grid">
+                <!-- Firm 1: Ibex Overseas -->
+                <div class="firm-card">
+                    <img src="logo.png" alt="Ibex Overseas Education & Services" class="firm-logo">
+                    <h3>Ibex Overseas Education & Services</h3>
+                </div>
+                <!-- Firm 2: Results International -->
+                <div class="firm-card">
+                    <img src="Rlogo.png" alt="Results International" class="firm-logo">
+                    <h3>Results International</h3>
+                </div>
+            </div>
         </div>
 
         <!-- Premium General Features Grid -->
