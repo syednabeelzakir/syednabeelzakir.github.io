@@ -38,48 +38,17 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Header (CHANGED: position is now relative instead of sticky/floating) */
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            position: relative; 
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-text {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
+        /* Catchy Top Quote Banner (Replaced the navigation bar) */
+        .top-quote-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #ffffff;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            box-shadow: 0 4px 15px rgba(13, 71, 161, 0.15);
+            border-bottom: 3px solid var(--secondary);
         }
 
         /* Main Wrapper */
@@ -231,7 +200,7 @@
 
         /* Country Destinations Grid */
         .destinations-section {
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .destinations-grid {
@@ -289,12 +258,13 @@
             margin-bottom: 15px;
         }
 
-        /* NEW: Interactive USA Briefcase Section */
+        /* USA Briefcase Section - Extra top safety margin for mobile spacing */
         .briefcase-section {
             background: #f1f5f9;
             border: 2px dashed #cbd5e1;
             border-radius: 24px;
             padding: 35px;
+            margin-top: 50px;
             margin-bottom: 60px;
         }
 
@@ -365,17 +335,17 @@
             content: '−';
         }
 
+        /* Smooth Max-Height Animation (Zero padding leaks when collapsed) */
         .briefcase-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease;
-            padding: 0 20px;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             background: #ffffff;
         }
 
-        .briefcase-folder.active .briefcase-content {
-            max-height: 400px; /* Adjust as needed */
-            padding: 10px 20px 25px 20px;
+        /* Inner container holds the spacing dynamically only when expanded */
+        .briefcase-inner {
+            padding: 24px;
             border-top: 1px solid var(--border-color);
         }
 
@@ -531,7 +501,7 @@
         /* Balanced Proportion University Container */
         .partners-container {
             max-width: 550px; 
-            margin: 20px auto 0 auto;
+            margin: 0 auto;
             background-color: #fefefe;
             border: 1px solid var(--border-color);
             border-radius: 16px;
@@ -611,7 +581,7 @@
             text-align: center;
             padding: 40px 10px;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-top: 1px solid var(--border-color);
             margin-top: 60px;
         }
@@ -676,17 +646,10 @@
 </head>
 <body>
 
-    <!-- Sticky Navigation Bar (CHANGED: Header remains fixed at the very top of page, no longer floats down) -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo-text">Study Abroad with Syed Nabeel</a>
-            <ul class="nav-links">
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#usa-briefcase">USA Dossier</a></li>
-                <li><a href="#offices">Offices</a></li>
-            </ul>
-        </div>
-    </header>
+    <!-- Catchy Quote Announcement Bar -->
+    <div class="top-quote-banner">
+        ✨ Are you ready to explore the world? Let's turn your global study dreams into reality. ✨
+    </div>
 
     <div class="main-container">
 
@@ -760,7 +723,7 @@
             </div>
         </div>
 
-        <!-- NEW: USA Admissions & Relocation Briefcase (Packaged USA-only details) -->
+        <!-- USA Admissions & Relocation Briefcase (Perfect Mobile Spacing Added) -->
         <div class="briefcase-section" id="usa-briefcase">
             <div class="briefcase-header">
                 <span style="font-size: 2.2rem;">🧳</span>
@@ -775,11 +738,13 @@
                 <div class="briefcase-folder">
                     <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
                     <div class="briefcase-content">
-                        <ul class="bullet-list" style="margin-top: 10px;">
-                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
-                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
-                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
-                        </ul>
+                        <div class="briefcase-inner">
+                            <ul class="bullet-list">
+                                <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
+                                <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
+                                <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -787,11 +752,13 @@
                 <div class="briefcase-folder">
                     <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
                     <div class="briefcase-content">
-                        <ul class="bullet-list" style="margin-top: 10px;">
-                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
-                            <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
-                            <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
-                        </ul>
+                        <div class="briefcase-inner">
+                            <ul class="bullet-list">
+                                <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
+                                <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
+                                <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
@@ -799,21 +766,25 @@
                 <div class="briefcase-folder">
                     <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
                     <div class="briefcase-content">
-                        <ul class="bullet-list" style="margin-top: 10px;">
-                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
-                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
-                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
-                        </ul>
+                        <div class="briefcase-inner">
+                            <ul class="bullet-list">
+                                <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
+                                <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
+                                <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- USA Folder 4: USA Partner Universities -->
+                <!-- USA Folder 4: USA Partner Universities (Fixed: 100% hidden when collapsed) -->
                 <div class="briefcase-folder">
                     <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
-                    <div class="briefcase-content" style="text-align: center; padding: 20px;">
-                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
-                        <div class="partners-container" style="margin: 0 auto; box-shadow: none; border: 1px solid var(--border-color);">
-                            <img src="1000568366.jpeg" alt="Partner Universities of USA">
+                    <div class="briefcase-content">
+                        <div class="briefcase-inner" style="text-align: center;">
+                            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
+                            <div class="partners-container" style="box-shadow: none; border: 1px solid var(--border-color);">
+                                <img src="1000568366.jpeg" alt="Partner Universities of USA">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -914,21 +885,30 @@
         </footer>
     </div>
 
-    <!-- Simple Accordion Script for USA Briefcase Folder Toggles -->
+    <!-- Active Accordion Script with Dynamic Height Calculation -->
     <script>
         function toggleFolder(button) {
             const folder = button.parentElement;
-            
-            // Toggle active state of clicked folder
-            folder.classList.toggle('active');
-            
-            // Optional: Close other folders when opening a new one
+            const content = folder.querySelector('.briefcase-content');
             const allFolders = document.querySelectorAll('.briefcase-folder');
+            
+            // Close all other open folders smoothly
             allFolders.forEach(item => {
                 if (item !== folder) {
                     item.classList.remove('active');
+                    item.querySelector('.briefcase-content').style.maxHeight = null;
                 }
             });
+
+            // Toggle active state for current folder
+            folder.classList.toggle('active');
+            
+            if (folder.classList.contains('active')) {
+                // Instantly calculate natural scroll height to prevent cropping
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
         }
     </script>
 </body>
