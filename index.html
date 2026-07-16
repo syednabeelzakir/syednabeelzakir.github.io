@@ -38,12 +38,11 @@
             overflow-x: hidden;
         }
 
-        /* Navigation Header */
+        /* Navigation Header (CHANGED: position is now relative instead of sticky/floating) */
         header {
             background: #ffffff;
             border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
+            position: relative; 
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
@@ -230,7 +229,7 @@
             color: var(--primary);
         }
 
-        /* NEW: Country Destinations Grid */
+        /* Country Destinations Grid */
         .destinations-section {
             margin-bottom: 60px;
         }
@@ -288,6 +287,96 @@
             border-radius: 20px;
             display: inline-block;
             margin-bottom: 15px;
+        }
+
+        /* NEW: Interactive USA Briefcase Section */
+        .briefcase-section {
+            background: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 60px;
+        }
+
+        .briefcase-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .briefcase-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .briefcase-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Accordion Folder */
+        .briefcase-folder {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .briefcase-trigger {
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .briefcase-trigger:hover {
+            background: var(--bg-light);
+        }
+
+        .briefcase-trigger::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+
+        /* Expanded State styling */
+        .briefcase-folder.active {
+            border-color: var(--accent);
+            box-shadow: var(--card-shadow);
+        }
+
+        .briefcase-folder.active .briefcase-trigger::after {
+            content: '−';
+        }
+
+        .briefcase-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            padding: 0 20px;
+            background: #ffffff;
+        }
+
+        .briefcase-folder.active .briefcase-content {
+            max-height: 400px; /* Adjust as needed */
+            padding: 10px 20px 25px 20px;
+            border-top: 1px solid var(--border-color);
         }
 
         /* Associated Firms Section styling */
@@ -587,13 +676,13 @@
 </head>
 <body>
 
-    <!-- Sticky Navigation Bar -->
+    <!-- Sticky Navigation Bar (CHANGED: Header remains fixed at the very top of page, no longer floats down) -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-text">Study Abroad with Syed Nabeel</a>
             <ul class="nav-links">
                 <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#usa-briefcase">USA Dossier</a></li>
                 <li><a href="#offices">Offices</a></li>
             </ul>
         </div>
@@ -634,7 +723,7 @@
 
         </div>
 
-        <!-- NEW: Destination Selector Section -->
+        <!-- Destination Selector Section -->
         <div class="destinations-section" id="destinations">
             <div class="section-header">
                 <h2>🌍 Choose Your Destination</h2>
@@ -648,7 +737,7 @@
                     <span class="country-badge">Top Choice</span>
                     <h3>United States</h3>
                     <p>F-1 Academic & Spouse pathways. Secure admissions with $0 advance tuition deposit options and outstanding mock prep.</p>
-                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20the%20USA." class="btn btn-outline" target="_blank">Learn More</a>
+                    <a href="#usa-briefcase" class="btn btn-primary">Open USA Briefcase ↓</a>
                 </div>
 
                 <!-- United Kingdom Card -->
@@ -657,7 +746,7 @@
                     <span class="country-badge">Fast Track</span>
                     <h3>United Kingdom</h3>
                     <p>Premium global degrees with direct placements, fast-tracked CAS, and options for dependents/post-study work visas.</p>
-                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20the%20UK." class="btn btn-outline" target="_blank">Learn More</a>
+                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20the%20UK." class="btn btn-outline" target="_blank">Inquire for UK</a>
                 </div>
 
                 <!-- Hungary Card -->
@@ -666,7 +755,67 @@
                     <span class="country-badge">Schengen Access</span>
                     <h3>Hungary</h3>
                     <p>Affordable European education offering Schengen access, English-taught programs, and highly viable scholarship routes.</p>
-                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20Hungary." class="btn btn-outline" target="_blank">Learn More</a>
+                    <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20Hungary." class="btn btn-outline" target="_blank">Inquire for Hungary</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: USA Admissions & Relocation Briefcase (Packaged USA-only details) -->
+        <div class="briefcase-section" id="usa-briefcase">
+            <div class="briefcase-header">
+                <span style="font-size: 2.2rem;">🧳</span>
+                <div>
+                    <h2>USA Admissions & Relocation Briefcase</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Interactive folder dossier containing all key features, benefits, and support guidelines for studying in the USA.</p>
+                </div>
+            </div>
+
+            <div class="briefcase-container">
+                <!-- USA Folder 1: Admissions & Scholarship Details -->
+                <div class="briefcase-folder">
+                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
+                    <div class="briefcase-content">
+                        <ul class="bullet-list" style="margin-top: 10px;">
+                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
+                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
+                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- USA Folder 2: Visa & Spousal (F1/F2) Prep -->
+                <div class="briefcase-folder">
+                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
+                    <div class="briefcase-content">
+                        <ul class="bullet-list" style="margin-top: 10px;">
+                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
+                            <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
+                            <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- USA Folder 3: Flight, Landing & Dorm Support -->
+                <div class="briefcase-folder">
+                    <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
+                    <div class="briefcase-content">
+                        <ul class="bullet-list" style="margin-top: 10px;">
+                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
+                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
+                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- USA Folder 4: USA Partner Universities -->
+                <div class="briefcase-folder">
+                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
+                    <div class="briefcase-content" style="text-align: center; padding: 20px;">
+                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
+                        <div class="partners-container" style="margin: 0 auto; box-shadow: none; border: 1px solid var(--border-color);">
+                            <img src="1000568366.jpeg" alt="Partner Universities of USA">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -691,41 +840,6 @@
             </div>
         </div>
 
-        <!-- Premium General Features Grid (Globalized) -->
-        <div class="grid-container" id="services">
-            
-            <!-- Admission Features -->
-            <div class="feature-card">
-                <h3>🏛️ Admissions & Scholarships</h3>
-                <ul class="bullet-list">
-                    <li><strong>English Language Waivers:</strong> Secure placement options using MOI certificates if you don't have IELTS.</li>
-                    <li><strong>Merit Scholarship Aid:</strong> Access direct university scholarships to reduce your tuition fees.</li>
-                    <li><strong>Flexible Admission Profiles:</strong> Open options for gaps, mature-age students, and various credit profiles.</li>
-                </ul>
-            </div>
-
-            <!-- Travel & Landing Services -->
-            <div class="feature-card">
-                <h3>✈️ Arrival & On-Ground Support</h3>
-                <ul class="bullet-list">
-                    <li><strong>Airport Handover:</strong> Secure transitions with pre-coordinated airport pick-up services.</li>
-                    <li><strong>Accommodations Assistance:</strong> Help locking in short or long-term housing arrangements safely.</li>
-                    <li><strong>On-Ground Orientation:</strong> Integration guidance to help you navigate local travel, work permissions, and study rules.</li>
-                </ul>
-            </div>
-
-            <!-- Visa Privilege Services -->
-            <div class="feature-card">
-                <h3>🛂 Visa Preparation Excellence</h3>
-                <ul class="bullet-list">
-                    <li><strong>Spouse & Dependent Setup:</strong> Professional profiles built to ensure smooth spouse visa integration.</li>
-                    <li><strong>Rigorous Mock Interviews:</strong> Complete mock preparation simulating actual embassy environments.</li>
-                    <li><strong>Financial Profile Structuring:</strong> Expert oversight to ensure your bank and security statements comply perfectly.</li>
-                </ul>
-            </div>
-
-        </div>
-
         <!-- Perks Section -->
         <div class="section-header">
             <h2>🌟 Standard Relocation Perks</h2>
@@ -741,17 +855,6 @@
             <div class="perk-item">Arrival On-Ground Help</div>
             <div class="perk-item">Flexible Tuition Plans</div>
             <div class="perk-item">Schengen Access (Hungary)</div>
-        </div>
-
-        <!-- Partner Universities Area -->
-        <div class="partners-section">
-            <div class="section-header">
-                <h2>🏫 Featured Partner Universities</h2>
-                <p>Accepting gap years, flexible bank statements, mature age limits, and zero initial tuition deposits.</p>
-            </div>
-            <div class="partners-container">
-                <img src="1000568366.jpeg" alt="Partner Universities of USA">
-            </div>
         </div>
 
         <!-- FAQs Section -->
@@ -811,5 +914,22 @@
         </footer>
     </div>
 
+    <!-- Simple Accordion Script for USA Briefcase Folder Toggles -->
+    <script>
+        function toggleFolder(button) {
+            const folder = button.parentElement;
+            
+            // Toggle active state of clicked folder
+            folder.classList.toggle('active');
+            
+            // Optional: Close other folders when opening a new one
+            const allFolders = document.querySelectorAll('.briefcase-folder');
+            allFolders.forEach(item => {
+                if (item !== folder) {
+                    item.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
