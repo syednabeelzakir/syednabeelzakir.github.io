@@ -4,23 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Abroad with Syed Nabeel | Global Education Services</title>
-    <!-- Google Fonts for Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Modern Reset & Variables */
+        /* Modern Reset & Variables - Redefined for a Premium Global Aesthetic */
         :root {
-            --primary: #0d47a1;
-            --primary-light: #1e5bb8;
-            --secondary: #d32f2f;
-            --accent: #0284c7;
-            --whatsapp: #22c55e;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
-            --border-color: #e2e8f0;
-            --card-shadow: 0 10px 30px -10px rgba(13, 71, 161, 0.08);
+            --primary: #0f172a;          /* Slate Navy - Represents Global Authority & Trust */
+            --primary-light: #1e293b;    /* Charcoal Navy */
+            --secondary: #0d9488;        /* Vivid Teal - Accent color signaling growth & clarity */
+            --accent: #0f766e;           /* Deep Teal */
+            --whatsapp: #22c55e;         /* Direct Action Green */
+            --text-main: #334155;        /* Soft Charcoal */
+            --text-muted: #64748b;       /* Cool Gray */
+            --bg-light: #f8fafc;         /* Light Ice Gray */
+            --border-color: #e2e8f0;     /* Border soft light */
+            --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -32,7 +31,7 @@
         }
 
         body { 
-            background-color: #fefefe; 
+            background-color: #fcfcfd; 
             color: var(--text-main); 
             line-height: 1.6; 
             overflow-x: hidden;
@@ -41,7 +40,7 @@
         /* Catchy Top Quote Banner - Clean White Alignment */
         .top-quote-banner {
             background: #ffffff;
-            color: var(--primary);
+            color: var(--secondary);
             text-align: center;
             padding: 20px;
             font-size: clamp(1rem, 2.8vw, 1.25rem);
@@ -67,7 +66,7 @@
         }
 
         .advisor-card {
-            background: var(--bg-light);
+            background: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 40px;
@@ -99,7 +98,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #ffffff;
-            box-shadow: 0 8px 20px rgba(13, 71, 161, 0.15);
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
         }
 
         .advisor-card h1 {
@@ -127,11 +126,12 @@
 
         /* Hero Pitch */
         .hero-content h2 {
-            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
             line-height: 1.2;
             color: var(--primary);
             font-weight: 800;
             margin-bottom: 20px;
+            letter-spacing: -0.03em;
         }
 
         .hero-content h2 span {
@@ -139,9 +139,10 @@
         }
 
         .hero-desc {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 30px;
+            max-width: 620px;
         }
 
         /* Buttons & Actions */
@@ -160,35 +161,48 @@
             border: none;
         }
 
+        .btn-primary {
+            background-color: var(--secondary);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(13, 148, 136, 0.3);
+        }
+
         .btn-whatsapp {
             background-color: var(--whatsapp);
             color: #ffffff;
-            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.2);
             width: 100%;
             margin-bottom: 15px;
         }
 
         .btn-whatsapp:hover {
             transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(34, 197, 94, 0.35);
+            box-shadow: 0 12px 24px rgba(34, 197, 94, 0.3);
         }
 
         .btn-outline {
             border: 2px solid var(--border-color);
-            color: var(--text-main);
+            color: var(--primary);
             background: transparent;
             width: 100%;
         }
 
         .btn-outline:hover {
             background: var(--bg-light);
-            border-color: var(--primary);
-            color: var(--primary);
+            border-color: var(--secondary);
+            color: var(--secondary);
         }
 
         /* Country Destinations Grid */
         .destinations-section {
             margin-bottom: 60px;
+            margin-top: 20px;
         }
 
         .destinations-grid {
@@ -222,8 +236,8 @@
         }
 
         .country-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 15px 35px rgba(13, 71, 161, 0.1);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
         }
 
         .country-flag {
@@ -249,8 +263,8 @@
         }
 
         .country-badge {
-            background: rgba(13, 71, 161, 0.08);
-            color: var(--primary);
+            background: rgba(13, 148, 136, 0.08);
+            color: var(--secondary);
             font-size: 0.8rem;
             font-weight: 700;
             padding: 6px 12px;
@@ -265,6 +279,10 @@
             margin-top: 30px;
             border-top: 2px dashed var(--border-color);
             padding-top: 30px;
+            display: block;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .briefcase-container {
@@ -275,7 +293,7 @@
 
         /* Accordion Folder */
         .briefcase-folder {
-            background: #ffffff;
+            background: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: 14px;
             overflow: hidden;
@@ -300,19 +318,20 @@
         }
 
         .briefcase-trigger:hover {
-            background: var(--bg-light);
+            background: #ffffff;
         }
 
         .briefcase-trigger::after {
             content: '+';
             font-size: 1.5rem;
-            color: var(--accent);
-            font-weight: 400;
+            color: var(--secondary);
+            font-weight: 600;
             transition: transform 0.3s ease;
         }
 
         .briefcase-folder.active {
-            border-color: var(--accent);
+            border-color: var(--secondary);
+            background-color: #ffffff;
             box-shadow: var(--card-shadow);
         }
 
@@ -382,8 +401,8 @@
 
         .firm-card:hover {
             transform: translateY(-4px);
-            border-color: var(--primary-light);
-            box-shadow: 0 15px 35px -10px rgba(13, 71, 161, 0.12);
+            border-color: var(--secondary);
+            box-shadow: 0 15px 35px -10px rgba(15, 23, 42, 0.08);
         }
 
         .firm-logo {
@@ -411,7 +430,7 @@
 
         .feature-card:hover {
             transform: translateY(-4px);
-            border-color: var(--primary-light);
+            border-color: var(--secondary);
         }
 
         .feature-card h3 {
@@ -438,7 +457,7 @@
             position: absolute;
             left: 0;
             top: 1px;
-            color: var(--whatsapp);
+            color: var(--secondary);
             font-weight: 900;
         }
 
@@ -451,6 +470,7 @@
             font-size: 2rem;
             color: var(--primary);
             font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .section-header p {
@@ -506,7 +526,7 @@
         }
 
         .office-card:hover {
-            border-color: var(--accent);
+            border-color: var(--secondary);
             box-shadow: var(--card-shadow);
         }
 
@@ -592,14 +612,12 @@
 </head>
 <body>
 
-    <!-- Catchy Quote Announcement Bar -->
     <div class="top-quote-banner">
         Your global future is waiting. Let's make it happen.
     </div>
 
     <div class="main-container">
 
-        <!-- Dynamic Hero Section Layout -->
         <div class="hero-section">
             
             <div class="hero-content">
@@ -609,7 +627,6 @@
                 </p>
             </div>
 
-            <!-- Advisor Profile Card -->
             <div class="advisor-card">
                 <div class="avatar-wrapper">
                     <img src="syednabeel.jpeg" alt="Syed Nabeel" class="advisor-img">
@@ -629,7 +646,6 @@
 
         </div>
 
-        <!-- Destination Selector Section -->
         <div class="destinations-section" id="destinations">
             <div class="section-header">
                 <h2>🌍 Choose Your Destination</h2>
@@ -637,7 +653,6 @@
             </div>
             
             <div class="destinations-grid">
-                <!-- United States Card -->
                 <div class="country-card" id="usa-card">
                     <div class="country-flag">🇺🇸</div>
                     <span class="country-badge">Top Choice</span>
@@ -647,10 +662,8 @@
                         Open USA Briefcase <span class="sign">+</span>
                     </button>
 
-                    <!-- Integrated USA Briefcase -->
-                    <div id="usa-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                    <div id="usa-inner-briefcase" class="country-briefcase-content">
                         <div class="briefcase-container">
-                            <!-- USA Folder 1 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
                                 <div class="briefcase-content">
@@ -663,7 +676,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- USA Folder 2 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
                                 <div class="briefcase-content">
@@ -676,7 +688,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- USA Folder 3 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
                                 <div class="briefcase-content">
@@ -689,7 +700,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- USA Folder 4 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
                                 <div class="briefcase-content">
@@ -705,7 +715,6 @@
                     </div>
                 </div>
 
-                <!-- United Kingdom Card -->
                 <div class="country-card" id="uk-card">
                     <div class="country-flag">🇬🇧</div>
                     <span class="country-badge">Fast Track</span>
@@ -715,10 +724,8 @@
                         Open UK Briefcase <span class="sign">+</span>
                     </button>
 
-                    <!-- Integrated UK Briefcase -->
-                    <div id="uk-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                    <div id="uk-inner-briefcase" class="country-briefcase-content">
                         <div class="briefcase-container">
-                            <!-- UK Folder 1 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🇬🇧 Benefits of Studying in the UK</button>
                                 <div class="briefcase-content">
@@ -732,7 +739,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- UK Folder 2 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Admission & English Requirements</button>
                                 <div class="briefcase-content">
@@ -753,7 +759,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- UK Folder 3 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">📅 Popular Courses & Core Intakes</button>
                                 <div class="briefcase-content">
@@ -790,7 +795,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- UK Folder 4 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Cost of Tuition & Living Estimates</button>
                                 <div class="briefcase-content">
@@ -842,7 +846,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- UK Folder 5 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🚀 Fast-Track Applications & Post-Study Visas</button>
                                 <div class="briefcase-content">
@@ -871,7 +874,6 @@
                     </div>
                 </div>
 
-                <!-- Hungary Card -->
                 <div class="country-card" id="hungary-card">
                     <div class="country-flag">🇭🇺</div>
                     <span class="country-badge">Schengen Access</span>
@@ -881,10 +883,8 @@
                         Open Hungary Briefcase <span class="sign">+</span>
                     </button>
 
-                    <!-- Integrated Hungary Briefcase -->
-                    <div id="hungary-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                    <div id="hungary-inner-briefcase" class="country-briefcase-content">
                         <div class="briefcase-container">
-                            <!-- Hungary Folder 1 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🇭🇺 Why Study in Hungary? (Key Benefits)</button>
                                 <div class="briefcase-content">
@@ -900,7 +900,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hungary Folder 2 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Partner Universities & Popular Courses</button>
                                 <div class="briefcase-content">
@@ -929,7 +928,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hungary Folder 3 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Tuition Fees, Scholarships & Living Costs</button>
                                 <div class="briefcase-content">
@@ -994,7 +992,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hungary Folder 4 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
                                 <div class="briefcase-content">
@@ -1009,7 +1006,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hungary Folder 5 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Step-by-Step Simple Visa Process</button>
                                 <div class="briefcase-content">
@@ -1038,7 +1034,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Hungary Folder 6 -->
                             <div class="briefcase-folder">
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">⚠️ Common Mistakes to Avoid (We Prevent These!)</button>
                                 <div class="briefcase-content">
@@ -1060,19 +1055,16 @@
             </div>
         </div>
 
-        <!-- Associated Organizations Section -->
         <div class="associations-section">
             <div class="section-header">
                 <h2>Associated Organizations</h2>
                 <p>Leading consulting platforms assisting you throughout your path of international relocation.</p>
             </div>
             <div class="associations-grid">
-                <!-- Firm 1: Ibex Overseas -->
                 <div class="firm-card">
                     <img src="logo.png" alt="Ibex Overseas Education Services" class="firm-logo">
                     <h3>Ibex Overseas Education Services</h3>
                 </div>
-                <!-- Firm 2: Results International -->
                 <div class="firm-card">
                     <img src="Rlogo.png" alt="Results International" class="firm-logo">
                     <h3>Results International</h3>
@@ -1080,70 +1072,70 @@
             </div>
         </div>
 
-        <!-- Offices Network Section -->
         <div class="section-header" id="offices">
             <h2>📍 Our Global Office Network</h2>
             <p>Get in touch or visit any of our local branches for an in-person diagnostic assessment.</p>
         </div>
 
         <div class="offices-grid">
-            <!-- Pakistan Office 1: Blue Area -->
             <div class="office-card">
                 <div class="office-name">Islamabad Office G-9</div>
                 <div class="office-address">Unit No.902, Pakland Tower-2, Plot No.4, New Blue Area [F-9/G-9], Islamabad</div>
             </div>
 
-            <!-- Pakistan Office 2: G-15 -->
             <div class="office-card">
                 <div class="office-name">Islamabad Office G-15</div>
                 <div class="office-address">Office # 01, 1st Floor, Zeb Arcade, G-15 Markaz, Islamabad</div>
             </div>
 
-            <!-- United States of America Office -->
             <div class="office-card">
                 <div class="office-name">United States of America Office</div>
                 <div class="office-address">7105 Villa Park Road, Springfield, VA, United States</div>
             </div>
         </div>
 
-        <!-- Footer -->
         <footer>
             <p>Are you ready to build your profile? Let's get your visa timeline moving today.</p>
-            <p style="margin-top: 20px; font-weight:800; font-size: 1.15rem; color: var(--primary);">Study Abroad with Syed Nabeel</p>
+            <p style="margin-top: 20px; font-weight:800; font-size: 1.15rem; color: var(--secondary);">Study Abroad with Syed Nabeel</p>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase;">Connecting Dreams to Destinations</p>
         </footer>
     </div>
 
-    <!-- Active Accordion Script with Dynamic Height Calculation -->
     <script>
         function toggleCountryBriefcase(id, button) {
             const content = document.getElementById(id);
             const card = content.closest('.country-card');
             const isOpen = content.classList.contains('active');
-            const sign = button.querySelector('.sign');
             const countryName = card.querySelector('h3').textContent;
             
             if (!isOpen) {
+                // Open sequence
                 if (window.innerWidth >= 992) {
                     card.classList.add('expanded');
                 }
                 content.classList.add('active');
+                
+                // Get accurate total height including padding / contents
                 content.style.maxHeight = content.scrollHeight + "px";
-                sign.textContent = '−';
                 button.innerHTML = `Close ${countryName} Briefcase <span class="sign">−</span>`;
                 
+                // Keep inline max-height matching elements so interior folders can scale dynamic height
                 setTimeout(() => {
                     if (content.classList.contains('active')) {
                         content.style.maxHeight = "none";
                     }
-                }, 350);
+                }, 400);
             } else {
+                // Close sequence: Convert 'none' back to exact current scrollHeight instantly 
                 content.style.maxHeight = content.scrollHeight + "px";
+                
+                // Force layout reflow
                 content.offsetHeight; 
+                
+                // Smoothly slide shut
+                content.style.maxHeight = "0px";
                 content.classList.remove('active');
                 card.classList.remove('expanded');
-                content.style.maxHeight = null;
-                sign.textContent = '+';
                 button.innerHTML = `Open ${countryName} Briefcase <span class="sign">+</span>`;
             }
         }
@@ -1151,8 +1143,10 @@
         function toggleFolder(button) {
             const folder = button.parentElement;
             const content = folder.querySelector('.briefcase-content');
+            const container = folder.closest('.country-briefcase-content');
             const allFolders = folder.parentElement.querySelectorAll('.briefcase-folder');
             
+            // Auto close sibling folders
             allFolders.forEach(item => {
                 if (item !== folder) {
                     item.classList.remove('active');
@@ -1162,10 +1156,18 @@
 
             folder.classList.toggle('active');
             
+            // Adjust current folder heights dynamically
             if (folder.classList.contains('active')) {
                 content.style.maxHeight = content.scrollHeight + "px";
             } else {
                 content.style.maxHeight = null;
+            }
+
+            // If the parent country card is still opening/open, ensure container reflects adjusted inner heights
+            if (container && container.style.maxHeight !== "none" && container.style.maxHeight !== "0px") {
+                setTimeout(() => {
+                    container.style.maxHeight = container.scrollHeight + "px";
+                }, 10);
             }
         }
     </script>
