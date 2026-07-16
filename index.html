@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Abroad with Syed Nabeel | Global Education Services</title>
+    <!-- Google Fonts for Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -127,4 +128,1176 @@
         /* Hero Pitch */
         .hero-content h2 {
             font-size: clamp(2rem, 4vw, 3.2rem);
-            line-height: 1.2
+            line-height: 1.2;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 span {
+            color: var(--secondary);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Buttons & Actions */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(2, 132, 199, 0.35);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp);
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.25);
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(34, 197, 94, 0.35);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            background: transparent;
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Country Destinations Grid */
+        .destinations-section {
+            margin-bottom: 60px;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Grid Adjustments for Multi-Column Card Layout on larger screens */
+        @media (min-width: 992px) {
+            .destinations-grid {
+                grid-template-columns: repeat(3, 1fr);
+                align-items: start;
+            }
+            /* Span expanded destination cards gracefully if needed */
+            .country-card.expanded {
+                grid-column: span 3;
+            }
+        }
+
+        .country-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .country-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(13, 71, 161, 0.1);
+        }
+
+        .country-flag {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .country-card h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .country-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .country-badge {
+            background: rgba(13, 71, 161, 0.08);
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Embedded Briefcase Styles within Country Cards */
+        .country-briefcase-content {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 2px dashed var(--border-color);
+            padding-top: 30px;
+        }
+
+        .briefcase-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Accordion Folder */
+        .briefcase-folder {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .briefcase-trigger {
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .briefcase-trigger:hover {
+            background: var(--bg-light);
+        }
+
+        .briefcase-trigger::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 400;
+            transition: transform 0.3s ease;
+        }
+
+        /* Expanded State styling */
+        .briefcase-folder.active {
+            border-color: var(--accent);
+            box-shadow: var(--card-shadow);
+        }
+
+        .briefcase-folder.active .briefcase-trigger::after {
+            content: '−';
+        }
+
+        /* Smooth Max-Height Animation for Folders */
+        .briefcase-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #ffffff;
+        }
+
+        /* Inner container holds spacing dynamically */
+        .briefcase-inner {
+            padding: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Tables for Briefcase Details */
+        .briefcase-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .briefcase-table th, .briefcase-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        .briefcase-table th {
+            background-color: var(--bg-light);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Associated Firms Section styling */
+        .associations-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .associations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: 30px auto 0 auto;
+        }
+
+        .firm-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 20px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .firm-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+            box-shadow: 0 15px 35px -10px rgba(13, 71, 161, 0.12);
+        }
+
+        /* Balanced 1:1 footprint for both logo aspects */
+        .firm-logo {
+            width: 140px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .firm-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Grid Services Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-light);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .bullet-list {
+            list-style: none;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .bullet-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: var(--whatsapp);
+            font-weight: 900;
+        }
+
+        /* Perks Badge Layout */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .perk-item {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .perk-item:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+        }
+
+        /* Symmetrical White Partners Area */
+        .partners-section {
+            background-color: #fefefe;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Balanced Proportion University Container */
+        .partners-container {
+            max-width: 550px; 
+            margin: 0 auto;
+            background-color: #fefefe;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .partners-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Offices and Contact Card */
+        .offices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .office-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 24px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .office-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--card-shadow);
+        }
+
+        .office-name {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .office-address {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Toggle Button styling */
+        .toggle-briefcase-btn {
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 10px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+
+        /* --- Comprehensive Cross-Device Adaptability --- */
+        @media (max-width: 992px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-content {
+                order: 2;
+                text-align: center;
+            }
+            .advisor-card {
+                order: 1;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .associations-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .partners-container {
+                max-width: 100%;
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 25px 15px;
+            }
+            .hero-content h2 {
+                font-size: 1.8rem;
+            }
+            .advisor-card {
+                padding: 30px 16px;
+                width: 100%;
+            }
+            .advisor-img {
+                width: 140px;
+                height: 140px;
+            }
+            .advisor-card h1 {
+                font-size: 1.8rem;
+            }
+            .perks-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Catchy Quote Announcement Bar (Clean White Background, No Emojis/Stars) -->
+    <div class="top-quote-banner">
+        Your global future is waiting. Let's make it happen.
+    </div>
+
+    <div class="main-container">
+
+        <!-- Dynamic Hero Section Layout -->
+        <div class="hero-section">
+            
+            <div class="hero-content">
+                <h2>Your Journey To <span>Global Education</span> Starts Here</h2>
+                <p class="hero-desc">
+                    Expertly navigating admissions, visa processing, and entry profiles for elite world destinations. We provide secure, end-to-end consulting to ensure your study plans are a complete success.
+                </p>
+                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I%20am%20interested%20in%20applying%20for%20global%20study%20options." class="btn btn-primary" target="_blank">
+                    Explore Admissions Options &rarr;
+                </a>
+            </div>
+
+            <!-- Advisor Profile Card -->
+            <div class="advisor-card">
+                <div class="avatar-wrapper">
+                    <img src="syednabeel.jpeg" alt="Syed Nabeel" class="advisor-img">
+                </div>
+                <h1>Syed Nabeel</h1>
+                <div class="tagline">Senior Student Advisor & Visa Expert</div>
+                <p class="intro-text">
+                    Specializing in high-yield student visas, spouse visas, and tourist profiles. Providing personalized profile building and mock prep for key global destinations.
+                </p>
+                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20higher%20education%20abroad." class="btn btn-whatsapp" target="_blank">
+                    💬 Message on WhatsApp
+                </a>
+                <a href="tel:+923379226441" class="btn btn-outline">
+                    📞 Call: 03379226441
+                </a>
+            </div>
+
+        </div>
+
+        <!-- Destination Selector Section -->
+        <div class="destinations-section" id="destinations">
+            <div class="section-header">
+                <h2>🌍 Choose Your Destination</h2>
+                <p>We actively process secure pathways, admissions, and visas for these key global options.</p>
+            </div>
+            
+            <div class="destinations-grid">
+                <!-- United States Card -->
+                <div class="country-card" id="usa-card">
+                    <div class="country-flag">🇺🇸</div>
+                    <span class="country-badge">Top Choice</span>
+                    <h3>United States</h3>
+                    <p>F-1 Academic & Spouse pathways. Secure admissions with $0 advance tuition deposit options and outstanding mock prep.</p>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('usa-inner-briefcase', this)">
+                        Open USA Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated USA Briefcase -->
+                    <div id="usa-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- USA Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
+                                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
+                                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
+                                            <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
+                                            <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
+                                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
+                                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 4 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner" style="text-align: center;">
+                                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
+                                        <div class="partners-container" style="box-shadow: none; border: 1px solid var(--border-color);">
+                                            <img src="1000568366.jpeg" alt="Partner Universities of USA">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- United Kingdom Card -->
+                <div class="country-card" id="uk-card">
+                    <div class="country-flag">🇬🇧</div>
+                    <span class="country-badge">Fast Track</span>
+                    <h3>United Kingdom</h3>
+                    <p>Premium global degrees with direct placements, fast-tracked CAS, and options for dependents/post-study work visas.</p>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('uk-inner-briefcase', this)">
+                        Open UK Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated UK Briefcase -->
+                    <div id="uk-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- UK Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🇬🇧 Benefits of Studying in the UK</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Global Recognition:</strong> Access world-class education from globally respected universities and programs.</li>
+                                            <li><strong>Interactive Classrooms:</strong> Learn in rich, multicultural environments that prioritize global networking.</li>
+                                            <li><strong>Shorter Study Timelines:</strong> Complete structured 3-year Bachelor's degrees or high-efficiency 1-year Master's options.</li>
+                                            <li><strong>Modern Methodologies:</strong> Experience cutting-edge academic research alongside innovative teaching methods.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Admission & English Requirements</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Primary Admissions Checklist:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Original academic transcripts and certificates.</li>
+                                            <li>SOP (Personal Statement) & formal letters of recommendation.</li>
+                                            <li>An updated, professional resume/CV and a valid passport.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">English Proficiency Benchmarks:</h4>
+                                        <ul class="bullet-list">
+                                            <li><strong>Alternative Certifications:</strong> Standard options like IELTS, TOEFL, and PTE are widely accepted.</li>
+                                            <li><strong>Flexible Language Exams:</strong> Oxford, Duolingo, and LanguageCert pathways are also fully recognized.</li>
+                                            <li><strong>IELTS Exemptions:</strong> Medium of Instruction (MOI) waivers are available for qualifying educational profiles.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📅 Popular Courses & Core Intakes</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Trending Programs for Pakistani Students:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>STEM & Business:</strong> Business Analytics, Data Science, Computer Science, Management, and core Engineering fields (Mechanical, Civil, Electrical, Software).</li>
+                                            <li><strong>Creative, Law & Health:</strong> Design, Fashion & Creative Arts, Interior Designing, Health & Life Sciences, Architecture, MBBS, Law, and Finance & Accounting.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">UK Academic Intake Timelines:</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Intake Session</th>
+                                                    <th>Duration Period</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Spring</strong></td>
+                                                    <td>January – April</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Summer</strong></td>
+                                                    <td>April – June</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Main Autumn</strong></td>
+                                                    <td>September – December</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 4 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Cost of Tuition & Living Estimates</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Annual Tuition Structure:</h4>
+                                        <table class="briefcase-table" style="margin-bottom: 25px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Degree Level</th>
+                                                    <th>Tuition Cost (per year)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Bachelor's</td>
+                                                    <td>£10,000 – £20,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Master's</td>
+                                                    <td>£10,000 – £20,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Doctorate</td>
+                                                    <td>£15,000 – £24,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living Estimates:</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Expense Category</th>
+                                                    <th>Estimated Range (per month)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Bills</td><td>£40 – £50</td></tr>
+                                                <tr><td>Food</td><td>£160 – £200</td></tr>
+                                                <tr><td>Phone / Mobile data</td><td>£15 – £50</td></tr>
+                                                <tr><td>Local Transport</td><td>£32</td></tr>
+                                                <tr><td>TV Licence</td><td>£12.56</td></tr>
+                                                <tr><td>Books & Study Supplies</td><td>£21</td></tr>
+                                                <tr><td>Leisure Activities</td><td>£21</td></tr>
+                                                <tr><td>Socializing</td><td>£120</td></tr>
+                                                <tr><td>Childcare (If applicable)</td><td>£656</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 5 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🚀 Fast-Track Applications & Post-Study Visas</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Post-Study Work Options (Graduate Route):</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>Graduate Route:</strong> Stay and work in the UK for 18 months after completing Undergraduate or Master's programs.</li>
+                                            <li><strong>Doctoral Route:</strong> Stay up to 3 years after finishing a PhD.</li>
+                                            <li><strong>Skilled Visa:</strong> Full consulting support for transitioning into professional UK skilled visas.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Application Fast-Tracking:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>CAS Issuance:</strong> Direct support to secure swift Confirmation of Acceptance for Studies (CAS).</li>
+                                            <li><strong>Priority Processing:</strong> Access priority application reviews for rapid responses.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">UCAS Clearing Pathways:</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+                                            Missed out on your preferred choices? Through the UCAS Clearing service, we quickly identify and secure spots for international students at top universities with remaining openings.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hungary Card -->
+                <div class="country-card" id="hungary-card">
+                    <div class="country-flag">🇭🇺</div>
+                    <span class="country-badge">Schengen Access</span>
+                    <h3>Hungary</h3>
+                    <p>Affordable European education offering Schengen access, English-taught programs, and highly viable scholarship routes.</p>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('hungary-inner-briefcase', this)">
+                        Open Hungary Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated Hungary Briefcase -->
+                    <div id="hungary-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- Hungary Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🇭🇺 Why Study in Hungary? (Key Benefits)</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.95rem;">Hungary is emerging as one of Europe's top education destinations, providing an excellent balance of quality and cost.</p>
+                                        <ul class="bullet-list">
+                                            <li><strong>World-Class Education:</strong> Access highly regarded learning setups right in the heart of Europe.</li>
+                                            <li><strong>Budget-Friendly:</strong> Enjoy exceptionally low tuition fees alongside affordable living costs.</li>
+                                            <li><strong>Global Versatility:</strong> Learn via structured, English-taught programs across all degree levels.</li>
+                                            <li><strong>Travel Opportunities:</strong> Gain full Schengen visa access to easily travel across any European country.</li>
+                                            <li><strong>Cultural Enrichment:</strong> Immerse yourself in historically rich, safe, and vibrant student-friendly cities like Budapest, Debrecen, and Pécs.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Partner Universities & Popular Courses</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Hungarian Universities We Work With:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>International Business School (IBS), Budapest</li>
+                                            <li>Budapest Metropolitan University (METU)</li>
+                                            <li>University of Pécs</li>
+                                            <li>University of Debrecen</li>
+                                            <li>Széchenyi István University (Győr)</li>
+                                            <li>Corvinus University of Budapest</li>
+                                            <li>Hungarian University of Sports Sciences</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Popular Programs Chosen by Our Students:</h4>
+                                        <ul class="bullet-list">
+                                            <li>Business & Management</li>
+                                            <li>Marketing & International Relations</li>
+                                            <li>Data Science, AI & Computer Science</li>
+                                            <li>Health Sciences & Public Health</li>
+                                            <li>Engineering (Electrical, Mechanical, Civil)</li>
+                                            <li>Sports Sciences & Coaching</li>
+                                            <li>Tourism & Hospitality</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Tuition Fees, Scholarships & Living Costs</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Tuition Structure (per Semester):</h4>
+                                        <table class="briefcase-table" style="margin-bottom: 25px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Program</th>
+                                                    <th>Cost (per Semester / Total)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Bachelor's</strong></td>
+                                                    <td>€2,500 – €4,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Master's</strong></td>
+                                                    <td>€2,600 – €4,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Foundation / Pathway</strong></td>
+                                                    <td>€2,900 – €6,000 (Total)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Average Consultancy Fee</strong></td>
+                                                    <td>PKR 70,000 – €500</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Available Scholarships:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 25px;">
+                                            <li>University-specific merit scholarships.</li>
+                                            <li>Early payment tuition discounts (We assist students in applying for all eligible opportunities).</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living in Hungary (Total budget: €300 - €500):</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Expense Category</th>
+                                                    <th>Estimated Cost (per month)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Accommodation</strong></td>
+                                                    <td>€100 – €300 (Shared/Private)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Meals & Transport</strong></td>
+                                                    <td>€100 – €150</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Student Discounts</strong></td>
+                                                    <td>Highly active & accessible for local transport & national museums</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 4 -->
+                            <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
+                            <div class="briefcase-content">
+                                <div class="briefcase-inner">
+                                    <h4 style="color: var(--primary); margin-bottom: 10px;">English Language Benchmarks:</h4>
+                                    <ul class="bullet-list">
+                                        <li><strong>Internal Evaluation:</strong> Many universities readily accept customized internal English tests or online interviews.</li>
+                                        <li><strong>IELTS:</strong> Scores of 5.5 – 6.0 are widely accepted by select institutions.</li>
+                                        <li><strong>Duolingo:</strong> Accepted by several universities across major programs.</li>
+                                        <li><em>We carefully guide you to the perfect university path based on your existing profile.</em></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 5 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Step-by-Step Simple Visa Process</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">How We Support Your Visa Success:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Offer Letter coordination directly from your target Hungarian University.</li>
+                                            <li>Comprehensive, compliant Visa Application Support from start to finish.</li>
+                                            <li>Fast-track appointment booking with the Hungarian Embassy.</li>
+                                            <li>Thorough, meticulous Bank Statement & Financial Document Guidance.</li>
+                                            <li>Mandatory European Medical Insurance coordination.</li>
+                                            <li>Mock Prep for your formal Embassy Interview.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Crucial Visa Parameters:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>Bank Statement Required:</strong> Minimum €10,000 maintained for 6 to 8 months.</li>
+                                            <li><strong>Visa Fee:</strong> €80 (payable in cash directly at the Embassy).</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Part-Time Work While Studying:</h4>
+                                        <ul class="bullet-list">
+                                            <li>Earn money and gain local work experience with up to 20 hours/week during studies.</li>
+                                            <li>Work full-time during official semester holidays to support your living expenses.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hungary Folder 6 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">⚠️ Common Mistakes to Avoid (We Prevent These!)</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Incomplete or unorganized visa files.</li>
+                                            <li>Choosing the incorrect program or mismatching university tracks.</li>
+                                            <li>Missing critical admission and embassy deadlines.</li>
+                                            <li>Weak, generic Statement of Purpose (SOP) or motivation letters.</li>
+                                            <li>Improper maintenance of crucial bank statement timelines and financial records.</li>
+                                        </ul>
+                                        <p style="color: var(--primary); font-weight: 700;">Our expert consultancy team guarantees total oversight to safeguard your application from all these common errors!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Associated Organizations Section -->
+        <div class="associations-section">
+            <div class="section-header">
+                <h2>Associated Organizations</h2>
+                <p>Leading consulting platforms assisting you throughout your path of international relocation.</p>
+            </div>
+            <div class="associations-grid">
+                <!-- Firm 1: Ibex Overseas -->
+                <div class="firm-card">
+                    <img src="logo.png" alt="Ibex Overseas Education Services" class="firm-logo">
+                    <h3>Ibex Overseas Education Services</h3>
+                </div>
+                <!-- Firm 2: Results International -->
+                <div class="firm-card">
+                    <img src="Rlogo.png" alt="Results International" class="firm-logo">
+                    <h3>Results International</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perks Section -->
+        <div class="section-header">
+            <h2>🌟 Standard Relocation Perks</h2>
+            <p>Our complete roadmap covers your timeline from day one down to the landing.</p>
+        </div>
+
+        <div class="perks-grid">
+            <div class="perk-item">IELTS/MOI Admissions</div>
+            <div class="perk-item">Spouse & Dependent Prep</div>
+            <div class="perk-item">Airport Pickup Coordination</div>
+            <div class="perk-item">Health Insurance Setup</div>
+            <div class="perk-item">Accommodation Guidance</div>
+            <div class="perk-item">Arrival On-Ground Help</div>
+            <div class="perk-item">Flexible Tuition Plans</div>
+            <div class="perk-item">Schengen Access (Hungary)</div>
+        </div>
+
+        <!-- FAQs Section -->
+        <div class="faq-section">
+            <div class="section-header" style="text-align: left;">
+                <h2>Frequently Asked Questions</h2>
+                <p>Crucial guidelines for your international study plans.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I absolutely need IELTS/TOEFL to study abroad?</div>
+                <div class="faq-answer">Not always. For several partners in the USA, UK, and Hungary, we can utilize a Medium of Instruction (MOI) certificate from your previous institution as proof of English proficiency.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What makes Hungary a great option?</div>
+                <div class="faq-answer">Hungary offers high-quality, English-taught degree programs with much lower living and tuition costs compared to Western Europe. Plus, a Hungarian student visa grants you access to the entire Schengen zone!</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I travel and apply with my spouse?</div>
+                <div class="faq-answer">Yes, especially for major programs in countries like the USA and UK that allow dependent configurations. We handle full profiling for subsequent or simultaneous dependent visas.</div>
+            </div>
+        </div>
+
+        <!-- Offices Network Section -->
+        <div class="section-header" id="offices">
+            <h2>📍 Our Global Office Network</h2>
+            <p>Get in touch or visit any of our local branches for an in-person diagnostic assessment.</p>
+        </div>
+
+        <div class="offices-grid">
+            <!-- Pakistan Office 1: Blue Area -->
+            <div class="office-card">
+                <div class="office-name">Islamabad Office G-9</div>
+                <div class="office-address">Unit No.902, Pakland Tower-2, Plot No.4, New Blue Area [F-9/G-9], Islamabad</div>
+            </div>
+
+            <!-- Pakistan Office 2: G-15 -->
+            <div class="office-card">
+                <div class="office-name">Islamabad Office G-15</div>
+                <div class="office-address">Office # 01, 1st Floor, Zeb Arcade, G-15 Markaz, Islamabad</div>
+            </div>
+
+            <!-- United States of America Office -->
+            <div class="office-card">
+                <div class="office-name">United States of America Office</div>
+                <div class="office-address">7105 Villa Park Road, Springfield, VA, United States</div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Are you ready to build your profile? Let's get your visa timeline moving today.</p>
+            <p style="margin-top: 20px; font-weight:800; font-size: 1.15rem; color: var(--primary);">Study Abroad with Syed Nabeel</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; letter-spacing: 0.5px; text-transform: uppercase;">Connecting Dreams to Destinations</p>
+        </footer>
+    </div>
+
+    <!-- Active Accordion Script with Dynamic Height Calculation -->
+    <script>
+        // Main function to expand/collapse parent Country Briefcase
+        function toggleCountryBriefcase(id, button) {
+            const content = document.getElementById(id);
+            const card = content.closest('.country-card');
+            const isOpen = content.classList.contains('active');
+            const sign = button.querySelector('.sign');
+            const countryName = card.querySelector('h3').textContent;
+            
+            if (!isOpen) {
+                // Expand grid row on desktop to avoid squeezing deep content
+                if (window.innerWidth >= 992) {
+                    card.classList.add('expanded');
+                }
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+                sign.textContent = '−';
+                button.innerHTML = `Close ${countryName} Briefcase <span class="sign">−</span>`;
+                
+                // Once transition finishes, remove restriction so nested folders expand freely
+                setTimeout(() => {
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = "none";
+                    }
+                }, 350);
+            } else {
+                // Return to explicit scrollHeight to enable smooth transition back to 0
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.offsetHeight; // Force reflow
+                content.classList.remove('active');
+                card.classList.remove('expanded');
+                content.style.maxHeight = null;
+                sign.textContent = '+';
+                button.innerHTML = `Open ${countryName} Briefcase <span class="sign">+</span>`;
+            }
+        }
+
+        // Sub-folder toggling function (Nested Accordions)
+        function toggleFolder(button) {
+            const folder = button.parentElement;
+            const content = folder.querySelector('.briefcase-content');
+            const allFolders = folder.parentElement.querySelectorAll('.briefcase-folder');
+            
+            // Close other open folders inside the same briefcase
+            allFolders.forEach(item => {
+                if (item !== folder) {
+                    item.classList.remove('active');
+                    item.querySelector('.briefcase-content').style.maxHeight = null;
+                }
+            });
+
+            // Toggle active state for current folder
+            folder.classList.toggle('active');
+            
+            if (folder.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        }
+    </script>
+</body>
+</html>
