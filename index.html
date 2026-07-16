@@ -199,21 +199,33 @@
 
         /* Country Destinations Grid */
         .destinations-section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .destinations-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr;
+            gap: 30px;
             margin-top: 30px;
+        }
+
+        /* Responsive Grid Adjustments for Multi-Column Card Layout on larger screens */
+        @media (min-width: 992px) {
+            .destinations-grid {
+                grid-template-columns: repeat(3, 1fr);
+                align-items: start;
+            }
+            /* Span expanded destination cards gracefully if needed */
+            .country-card.expanded {
+                grid-column: span 3;
+            }
         }
 
         .country-card {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 30px;
+            border-radius: 24px;
+            padding: 35px;
             box-shadow: var(--card-shadow);
             transition: var(--transition);
             text-align: center;
@@ -222,19 +234,18 @@
         }
 
         .country-card:hover {
-            transform: translateY(-5px);
             border-color: var(--primary);
             box-shadow: 0 15px 35px rgba(13, 71, 161, 0.1);
         }
 
         .country-flag {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 15px;
             display: inline-block;
         }
 
         .country-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             color: var(--primary);
             margin-bottom: 10px;
             font-weight: 800;
@@ -242,8 +253,11 @@
 
         .country-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .country-badge {
@@ -257,27 +271,12 @@
             margin-bottom: 15px;
         }
 
-        /* Briefcase Section (Generic Styling for both USA & UK) */
-        .briefcase-section {
-            background: #f1f5f9;
-            border: 2px dashed #cbd5e1;
-            border-radius: 24px;
-            padding: 35px;
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-
-        .briefcase-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .briefcase-header h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            font-weight: 800;
+        /* Embedded Briefcase Styles within Country Cards */
+        .country-briefcase-content {
+            text-align: left;
+            margin-top: 30px;
+            border-top: 2px dashed var(--border-color);
+            padding-top: 30px;
         }
 
         .briefcase-container {
@@ -334,7 +333,7 @@
             content: '−';
         }
 
-        /* Smooth Max-Height Animation */
+        /* Smooth Max-Height Animation for Folders */
         .briefcase-content {
             max-height: 0;
             overflow: hidden;
@@ -348,7 +347,7 @@
             border-top: 1px solid var(--border-color);
         }
 
-        /* Tables for Briefcase Details (Intakes, Costs) */
+        /* Tables for Briefcase Details */
         .briefcase-table {
             width: 100%;
             border-collapse: collapse;
@@ -595,6 +594,16 @@
             font-size: 0.95rem;
         }
 
+        /* Toggle Button styling */
+        .toggle-briefcase-btn {
+            font-size: 0.95rem;
+            padding: 12px 24px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -714,21 +723,237 @@
             
             <div class="destinations-grid">
                 <!-- United States Card -->
-                <div class="country-card">
+                <div class="country-card" id="usa-card">
                     <div class="country-flag">🇺🇸</div>
                     <span class="country-badge">Top Choice</span>
                     <h3>United States</h3>
                     <p>F-1 Academic & Spouse pathways. Secure admissions with $0 advance tuition deposit options and outstanding mock prep.</p>
-                    <a href="#usa-briefcase" class="btn btn-primary">Open USA Briefcase ↓</a>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('usa-inner-briefcase', this)">
+                        Open USA Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated USA Briefcase -->
+                    <div id="usa-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- USA Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
+                                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
+                                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
+                                            <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
+                                            <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
+                                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
+                                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- USA Folder 4 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner" style="text-align: center;">
+                                        <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
+                                        <div class="partners-container" style="box-shadow: none; border: 1px solid var(--border-color);">
+                                            <img src="1000568366.jpeg" alt="Partner Universities of USA">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- United Kingdom Card -->
-                <div class="country-card">
+                <div class="country-card" id="uk-card">
                     <div class="country-flag">🇬🇧</div>
                     <span class="country-badge">Fast Track</span>
                     <h3>United Kingdom</h3>
                     <p>Premium global degrees with direct placements, fast-tracked CAS, and options for dependents/post-study work visas.</p>
-                    <a href="#uk-briefcase" class="btn btn-primary">Open UK Briefcase ↓</a>
+                    <button class="btn btn-primary toggle-briefcase-btn" onclick="toggleCountryBriefcase('uk-inner-briefcase', this)">
+                        Open UK Briefcase <span class="sign">+</span>
+                    </button>
+
+                    <!-- Integrated UK Briefcase -->
+                    <div id="uk-inner-briefcase" class="country-briefcase-content" style="max-height: 0; overflow: hidden; transition: var(--transition);">
+                        <div class="briefcase-container">
+                            <!-- UK Folder 1 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🇬🇧 Benefits of Studying in the UK</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <ul class="bullet-list">
+                                            <li><strong>Global Recognition:</strong> Access world-class education from globally respected universities and programs.</li>
+                                            <li><strong>Interactive Classrooms:</strong> Learn in rich, multicultural environments that prioritize global networking.</li>
+                                            <li><strong>Shorter Study Timelines:</strong> Complete structured 3-year Bachelor's degrees or high-efficiency 1-year Master's options.</li>
+                                            <li><strong>Modern Methodologies:</strong> Experience cutting-edge academic research alongside innovative teaching methods.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 2 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Admission & English Requirements</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Primary Admissions Checklist:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li>Original academic transcripts and certificates.</li>
+                                            <li>SOP (Personal Statement) & formal letters of recommendation.</li>
+                                            <li>An updated, professional resume/CV and a valid passport.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">English Proficiency Benchmarks:</h4>
+                                        <ul class="bullet-list">
+                                            <li><strong>Alternative Certifications:</strong> Standard options like IELTS, TOEFL, and PTE are widely accepted.</li>
+                                            <li><strong>Flexible Language Exams:</strong> Oxford, Duolingo, and LanguageCert pathways are also fully recognized.</li>
+                                            <li><strong>IELTS Exemptions:</strong> Medium of Instruction (MOI) waivers are available for qualifying educational profiles.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 3 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">📅 Popular Courses & Core Intakes</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Trending Programs for Pakistani Students:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>STEM & Business:</strong> Business Analytics, Data Science, Computer Science, Management, and core Engineering fields (Mechanical, Civil, Electrical, Software).</li>
+                                            <li><strong>Creative, Law & Health:</strong> Design, Fashion & Creative Arts, Interior Designing, Health & Life Sciences, Architecture, MBBS, Law, and Finance & Accounting.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">UK Academic Intake Timelines:</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Intake Session</th>
+                                                    <th>Duration Period</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Spring</strong></td>
+                                                    <td>January – April</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Summer</strong></td>
+                                                    <td>April – June</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Main Autumn</strong></td>
+                                                    <td>September – December</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 4 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Cost of Tuition & Living Estimates</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Annual Tuition Structure:</h4>
+                                        <table class="briefcase-table" style="margin-bottom: 25px;">
+                                            <thead>
+                                                <tr>
+                                                    <th>Degree Level</th>
+                                                    <th>Tuition Cost (per year)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Bachelor's</td>
+                                                    <td>£10,000 – £20,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Master's</td>
+                                                    <td>£10,000 – £20,000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Doctorate</td>
+                                                    <td>£15,000 – £24,000</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living Estimates:</h4>
+                                        <table class="briefcase-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Expense Category</th>
+                                                    <th>Estimated Range (per month)</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr><td>Bills</td><td>£40 – £50</td></tr>
+                                                <tr><td>Food</td><td>£160 – £200</td></tr>
+                                                <tr><td>Phone / Mobile data</td><td>£15 – £50</td></tr>
+                                                <tr><td>Local Transport</td><td>£32</td></tr>
+                                                <tr><td>TV Licence</td><td>£12.56</td></tr>
+                                                <tr><td>Books & Study Supplies</td><td>£21</td></tr>
+                                                <tr><td>Leisure Activities</td><td>£21</td></tr>
+                                                <tr><td>Socializing</td><td>£120</td></tr>
+                                                <tr><td>Childcare (If applicable)</td><td>£656</td></tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- UK Folder 5 -->
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🚀 Fast-Track Applications & Post-Study Visas</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Post-Study Work Options (Graduate Route):</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>Graduate Route:</strong> Stay and work in the UK for 18 months after completing Undergraduate or Master's programs.</li>
+                                            <li><strong>Doctoral Route:</strong> Stay up to 3 years after finishing a PhD.</li>
+                                            <li><strong>Skilled Visa:</strong> Full consulting support for transitioning into professional UK skilled visas.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Application Fast-Tracking:</h4>
+                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                            <li><strong>CAS Issuance:</strong> Direct support to secure swift Confirmation of Acceptance for Studies (CAS).</li>
+                                            <li><strong>Priority Processing:</strong> Access priority application reviews for rapid responses.</li>
+                                        </ul>
+
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">UCAS Clearing Pathways:</h4>
+                                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
+                                            Missed out on your preferred choices? Through the UCAS Clearing service, we quickly identify and secure spots for international students at top universities with remaining openings.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Hungary Card -->
@@ -738,241 +963,6 @@
                     <h3>Hungary</h3>
                     <p>Affordable European education offering Schengen access, English-taught programs, and highly viable scholarship routes.</p>
                     <a href="https://wa.me/923379226441?text=I%20want%20to%20apply%20for%20Hungary." class="btn btn-outline" target="_blank">Inquire for Hungary</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- USA Admissions & Relocation Briefcase -->
-        <div class="briefcase-section" id="usa-briefcase">
-            <div class="briefcase-header">
-                <span style="font-size: 2.2rem;">🧳</span>
-                <div>
-                    <h2>USA Admissions & Relocation Briefcase</h2>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">Interactive folder dossier containing all key features, benefits, and support guidelines for studying in the USA.</p>
-                </div>
-            </div>
-
-            <div class="briefcase-container">
-                <!-- USA Folder 1: Admissions & Scholarship Details -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🏛️ Admission Perks & $0 Tuition Deposit</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <ul class="bullet-list">
-                                <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
-                                <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
-                                <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- USA Folder 2: Visa & Spousal (F1/F2) Prep -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Visa Excellence & Spouse Integration</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <ul class="bullet-list">
-                                <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
-                                <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
-                                <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- USA Folder 3: Flight, Landing & Dorm Support -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">✈️ Arrival Logistics & Housing Support</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <ul class="bullet-list">
-                                <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
-                                <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
-                                <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- USA Folder 4: USA Partner Universities -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🏫 Featured USA Universities & Partners</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner" style="text-align: center;">
-                            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">We match your profile directly to US institutions offering low tuition, flexible bank seasoning, and $0 deposits.</p>
-                            <div class="partners-container" style="box-shadow: none; border: 1px solid var(--border-color);">
-                                <img src="1000568366.jpeg" alt="Partner Universities of USA">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- UK Admissions & Relocation Briefcase -->
-        <div class="briefcase-section" id="uk-briefcase">
-            <div class="briefcase-header">
-                <span style="font-size: 2.2rem;">💼</span>
-                <div>
-                    <h2>UK Admissions & Relocation Briefcase</h2>
-                    <p style="color: var(--text-muted); font-size: 0.95rem;">All-in-one interactive folder detailing admissions, fast-track processing, structures, and post-study opportunities in the United Kingdom.</p>
-                </div>
-            </div>
-
-            <div class="briefcase-container">
-                <!-- UK Folder 1: Why Study & Benefits -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🇬🇧 Benefits of Studying in the UK</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <ul class="bullet-list">
-                                <li><strong>Global Recognition:</strong> Access world-class education from globally respected universities and programs.</li>
-                                <li><strong>Interactive Classrooms:</strong> Learn in rich, multicultural environments that prioritize global networking.</li>
-                                <li><strong>Shorter Study Timelines:</strong> Complete structured 3-year Bachelor's degrees or high-efficiency 1-year Master's options.</li>
-                                <li><strong>Modern Methodologies:</strong> Experience cutting-edge academic research alongside innovative teaching methods.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UK Folder 2: Admission & Language Requirements -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Admission & English Requirements</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Primary Admissions Checklist:</h4>
-                            <ul class="bullet-list" style="margin-bottom: 20px;">
-                                <li>Original academic transcripts and certificates.</li>
-                                <li>SOP (Personal Statement) & formal letters of recommendation.</li>
-                                <li>An updated, professional resume/CV and a valid passport.</li>
-                            </ul>
-
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">English Proficiency Benchmarks:</h4>
-                            <ul class="bullet-list">
-                                <li><strong>Alternative Certifications:</strong> Standard options like IELTS, TOEFL, and PTE are widely accepted.</li>
-                                <li><strong>Flexible Language Exams:</strong> Oxford, Duolingo, and LanguageCert pathways are also fully recognized.</li>
-                                <li><strong>IELTS Exemptions:</strong> Medium of Instruction (MOI) waivers are available for qualifying educational profiles.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UK Folder 3: Popular Courses & Intakes -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">📅 Popular Courses & Core Intakes</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Trending Programs for Pakistani Students:</h4>
-                            <ul class="bullet-list" style="margin-bottom: 20px;">
-                                <li><strong>STEM & Business:</strong> Business Analytics, Data Science, Computer Science, Management, and core Engineering fields (Mechanical, Civil, Electrical, Software).</li>
-                                <li><strong>Creative, Law & Health:</strong> Design, Fashion & Creative Arts, Interior Designing, Health & Life Sciences, Architecture, MBBS, Law, and Finance & Accounting.</li>
-                            </ul>
-
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">UK Academic Intake Timelines:</h4>
-                            <table class="briefcase-table">
-                                <thead>
-                                    <tr>
-                                        <th>Intake Session</th>
-                                        <th>Duration Period</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><strong>Spring</strong></td>
-                                        <td>January – April</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Summer</strong></td>
-                                        <td>April – June</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Main Autumn</strong></td>
-                                        <td>September – December</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UK Folder 4: Annual Tuition & Cost of Living Breakdowns -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">💰 Cost of Tuition & Living Estimates</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Annual Tuition Structure:</h4>
-                            <table class="briefcase-table" style="margin-bottom: 25px;">
-                                <thead>
-                                    <tr>
-                                        <th>Degree Level</th>
-                                        <th>Tuition Cost (per year)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Bachelor's</td>
-                                        <td>£10,000 – £20,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Master's</td>
-                                        <td>£10,000 – £20,000</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Doctorate</td>
-                                        <td>£15,000 – £24,000</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living Estimates:</h4>
-                            <table class="briefcase-table">
-                                <thead>
-                                    <tr>
-                                        <th>Expense Category</th>
-                                        <th>Estimated Range (per month)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><td>Bills</td><td>£40 – £50</td></tr>
-                                    <tr><td>Food</td><td>£160 – £200</td></tr>
-                                    <tr><td>Phone / Mobile data</td><td>£15 – £50</td></tr>
-                                    <tr><td>Local Transport</td><td>£32</td></tr>
-                                    <tr><td>TV Licence</td><td>£12.56</td></tr>
-                                    <tr><td>Books & Study Supplies</td><td>£21</td></tr>
-                                    <tr><td>Leisure Activities</td><td>£21</td></tr>
-                                    <tr><td>Socializing</td><td>£120</td></tr>
-                                    <tr><td>Childcare (If applicable)</td><td>£656</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- UK Folder 5: Fast-Tracking & Post-Study Work Visa Pathways -->
-                <div class="briefcase-folder">
-                    <button class="briefcase-trigger" onclick="toggleFolder(this)">🚀 Fast-Track Applications & Post-Study Visas</button>
-                    <div class="briefcase-content">
-                        <div class="briefcase-inner">
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Post-Study Work Options (Graduate Route):</h4>
-                            <ul class="bullet-list" style="margin-bottom: 20px;">
-                                <li><strong>Graduate Route:</strong> Stay and work in the UK for 18 months after completing Undergraduate or Master's programs.</li>
-                                <li><strong>Doctoral Route:</strong> Stay up to 3 years after finishing a PhD.</li>
-                                <li><strong>Skilled Visa:</strong> Full consulting support for transitioning into professional UK skilled visas.</li>
-                            </ul>
-
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Application Fast-Tracking:</h4>
-                            <ul class="bullet-list" style="margin-bottom: 20px;">
-                                <li><strong>CAS Issuance:</strong> Direct support to secure swift Confirmation of Acceptance for Studies (CAS).</li>
-                                <li><strong>Priority Processing:</strong> Access priority application reviews for rapid responses.</li>
-                            </ul>
-
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">UCAS Clearing Pathways:</h4>
-                            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
-                                Missed out on your preferred choices? Through the UCAS Clearing service, we quickly identify and secure spots for international students at top universities with remaining openings.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1073,12 +1063,49 @@
 
     <!-- Active Accordion Script with Dynamic Height Calculation -->
     <script>
+        // Main function to expand/collapse parent Country Briefcase
+        function toggleCountryBriefcase(id, button) {
+            const content = document.getElementById(id);
+            const card = content.closest('.country-card');
+            const isOpen = content.classList.contains('active');
+            const sign = button.querySelector('.sign');
+            const countryName = card.querySelector('h3').textContent;
+            
+            if (!isOpen) {
+                // Expand grid row on desktop to avoid squeezing deep content
+                if (window.innerWidth >= 992) {
+                    card.classList.add('expanded');
+                }
+                content.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + "px";
+                sign.textContent = '−';
+                button.innerHTML = `Close ${countryName} Briefcase <span class="sign">−</span>`;
+                
+                // Once transition finishes, remove restriction so nested folders expand freely
+                setTimeout(() => {
+                    if (content.classList.contains('active')) {
+                        content.style.maxHeight = "none";
+                    }
+                }, 350);
+            } else {
+                // Return to explicit scrollHeight to enable smooth transition back to 0
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.offsetHeight; // Force reflow
+                content.classList.remove('active');
+                card.classList.remove('expanded');
+                content.style.maxHeight = null;
+                sign.textContent = '+';
+                button.innerHTML = `Open ${countryName} Briefcase <span class="sign">+</span>`;
+            }
+        }
+
+        // Sub-folder toggling function (Nested Accordions)
         function toggleFolder(button) {
             const folder = button.parentElement;
             const content = folder.querySelector('.briefcase-content');
-            const allFolders = document.querySelectorAll('.briefcase-folder');
+            const allFolders = folder.parentElement.querySelectorAll('.briefcase-folder');
             
-            // Close other open folders inside both USA & UK briefs
+            // Close other open folders inside the same briefcase
             allFolders.forEach(item => {
                 if (item !== folder) {
                     item.classList.remove('active');
@@ -1090,7 +1117,6 @@
             folder.classList.toggle('active');
             
             if (folder.classList.contains('active')) {
-                // Instantly calculate natural scroll height to prevent cropping
                 content.style.maxHeight = content.scrollHeight + "px";
             } else {
                 content.style.maxHeight = null;
