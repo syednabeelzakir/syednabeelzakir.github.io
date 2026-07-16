@@ -10,9 +10,9 @@
     <style>
         /* Modern Reset & Variables - Premium Global Aesthetic */
         :root {
-            --primary: #0f172a;          /* Slate Navy - Represents Global Authority & Trust */
+            --primary: #0f172a;          /* Slate Navy */
             --primary-light: #1e293b;    /* Charcoal Navy */
-            --secondary: #0d9488;        /* Vivid Teal - Accent color signaling growth & clarity */
+            --secondary: #0d9488;        /* Vivid Teal - Accent color signaling growth */
             --accent: #0f766e;           /* Deep Teal */
             --whatsapp: #22c55e;         /* Direct Action Green */
             --whatsapp-hover: #16a34a;   /* Darker Green */
@@ -38,7 +38,7 @@
             overflow-x: hidden;
         }
 
-        /* Catchy Top Quote Banner - Clean White Alignment */
+        /* Top Quote Banner */
         .top-quote-banner {
             background: #ffffff;
             color: var(--secondary);
@@ -69,10 +69,10 @@
         .advisor-card {
             background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 24px;
+            border-radius: 28px;
             padding: 40px 30px;
             text-align: center;
-            box-shadow: var(--card-shadow);
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -94,8 +94,8 @@
         }
 
         .advisor-img {
-            width: 150px;
-            height: 150px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #ffffff;
@@ -125,24 +125,27 @@
             margin: 0 auto 25px auto;
         }
 
-        /* Trust & Success Counter Section inside card */
+        /* Updated Trust & Success Counter Section */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 30px;
             padding: 15px 10px;
             background: var(--bg-light);
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid var(--border-color);
         }
 
         .stat-item {
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .stat-number {
-            font-size: 1.4rem;
+            font-size: 1.45rem;
             font-weight: 800;
             color: var(--secondary);
             display: block;
@@ -150,25 +153,134 @@
         }
 
         .stat-label {
-            font-size: 0.72rem;
-            font-weight: 600;
+            font-size: 0.7rem;
+            font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            margin-top: 4px;
-            display: inline-block;
+            margin-top: 6px;
+            line-height: 1.3;
         }
 
-        /* Compact Interactive Actions Group */
+        /* Professional Integrated Contact Row */
         .profile-actions {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             gap: 12px;
             width: 100%;
         }
 
-        /* Hero Pitch */
+        /* Phone Number Badge (Shown Once) */
+        .phone-display-badge {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 12px 20px;
+            text-align: left;
+        }
+
+        .phone-info-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .phone-label {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        .phone-value {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 0.5px;
+        }
+
+        /* Pulse Dot Indicator */
+        .pulse-dot-container {
+            display: flex;
+            position: relative;
+            width: 10px;
+            height: 10px;
+        }
+
+        .pulse-dot {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #22c55e;
+            opacity: 0.75;
+            animation: pulse-ring 2s infinite;
+        }
+
+        .static-dot {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #22c55e;
+        }
+
+        /* Two Official Circular Action Row */
+        .action-buttons-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            width: 100%;
+        }
+
+        .btn-action-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 16px;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            color: #ffffff;
+        }
+
+        /* Direct Call Style */
+        .btn-call-style {
+            background-color: var(--primary);
+        }
+
+        .btn-call-style:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
+        }
+
+        /* WhatsApp Action Style */
+        .btn-wa-style {
+            background-color: var(--whatsapp);
+        }
+
+        .btn-wa-style:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.3);
+        }
+
+        .btn-action-circle svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Hero Pitch Header */
         .hero-content h2 {
             font-size: clamp(2.2rem, 4.5vw, 3.4rem);
             line-height: 1.2;
@@ -189,7 +301,7 @@
             max-width: 620px;
         }
 
-        /* Buttons & Actions */
+        /* Button Utilities */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -216,45 +328,7 @@
             box-shadow: 0 12px 24px rgba(13, 148, 136, 0.3);
         }
 
-        .btn-outline {
-            border: 2px solid var(--border-color);
-            color: var(--primary);
-            background: transparent;
-            padding: 14px 24px;
-            flex-grow: 1;
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-light);
-            border-color: var(--secondary);
-            color: var(--secondary);
-            transform: translateY(-2px);
-        }
-
-        /* Highly Professional Circular Call Button */
-        .btn-circular-call {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            color: #ffffff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.2rem;
-            box-shadow: 0 6px 15px rgba(15, 23, 42, 0.15);
-            transition: var(--transition);
-            flex-shrink: 0;
-        }
-
-        .btn-circular-call:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px) rotate(15deg);
-            box-shadow: 0 8px 20px rgba(13, 148, 136, 0.25);
-        }
-
-        /* Floating Modern Interactive WhatsApp Button */
+        /* Floating Modern Interactive WhatsApp Button (Bottom Right) */
         .floating-whatsapp {
             position: fixed;
             bottom: 30px;
@@ -271,7 +345,7 @@
             z-index: 9999;
             transition: var(--transition);
             text-decoration: none;
-            animation: pulse-ring 2s infinite;
+            animation: pulse-ring-large 2s infinite;
         }
 
         .floating-whatsapp svg {
@@ -287,17 +361,17 @@
             box-shadow: 0 12px 30px rgba(34, 197, 94, 0.5);
         }
 
-        /* Pulse Ring Animation for WhatsApp */
+        /* Pulse Ring Animations */
         @keyframes pulse-ring {
-            0% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-            }
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        @keyframes pulse-ring-large {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
         /* Country Destinations Grid */
@@ -313,7 +387,6 @@
             margin-top: 30px;
         }
 
-        /* Responsive Grid Adjustments for Multi-Column Card Layout on larger screens */
         @media (min-width: 992px) {
             .destinations-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -374,7 +447,7 @@
             margin-bottom: 15px;
         }
 
-        /* Embedded Briefcase Styles within Country Cards */
+        /* Accordion Briefcase Folders */
         .country-briefcase-content {
             text-align: left;
             margin-top: 30px;
@@ -392,7 +465,6 @@
             gap: 15px;
         }
 
-        /* Accordion Folder */
         .briefcase-folder {
             background: var(--bg-light);
             border: 1px solid var(--border-color);
@@ -440,7 +512,6 @@
             content: '−';
         }
 
-        /* Smooth Max-Height Animation for Folders */
         .briefcase-content {
             max-height: 0;
             overflow: hidden;
@@ -520,27 +591,6 @@
             font-weight: 700;
         }
 
-        .feature-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--secondary);
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
         .bullet-list {
             list-style: none;
         }
@@ -579,7 +629,7 @@
             margin-top: 5px;
         }
 
-        /* Symmetrical White Partners Area */
+        /* Symmetrical Partners Area */
         .partners-section {
             background-color: #fefefe;
             border-radius: 20px;
@@ -609,7 +659,7 @@
             object-fit: contain;
         }
 
-        /* Offices and Contact Card */
+        /* Offices Network */
         .offices-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -662,7 +712,7 @@
             margin-top: 60px;
         }
 
-        /* --- Comprehensive Cross-Device Adaptability --- */
+        /* --- Comprehensive Responsive Styles --- */
         @media (max-width: 992px) {
             .hero-section {
                 grid-template-columns: 1fr;
@@ -757,25 +807,45 @@
                 <div class="stats-grid">
                     <div class="stat-item">
                         <span class="stat-number">127+</span>
-                        <span class="stat-label">Destinations<br>Reached</span>
+                        <span class="stat-label">Students Reached Destinations</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">Visa Success<br>Rate</span>
+                        <span class="stat-number">89%</span>
+                        <span class="stat-label">Visa Success Rate</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">$0</span>
-                        <span class="stat-label">Advance Deposit<br>Options</span>
+                        <span class="stat-label">Advance Deposit Options</span>
                     </div>
                 </div>
 
                 <div class="profile-actions">
-                    <a href="tel:+923379226441" class="btn btn-outline">
-                        📞 Call: 03379226441
-                    </a>
-                    <a href="tel:+923379226441" class="btn-circular-call" title="Direct Call Now">
-                        📞
-                    </a>
+                    <div class="phone-display-badge">
+                        <div class="phone-info-text">
+                            <span class="phone-label">Direct Helpline</span>
+                            <span class="phone-value">03379226441</span>
+                        </div>
+                        <div class="pulse-dot-container">
+                            <div class="pulse-dot"></div>
+                            <div class="static-dot"></div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons-row">
+                        <a href="tel:03379226441" class="btn-action-circle btn-call-style" title="Direct Phone Call">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
+                            </svg>
+                            Call Helpline
+                        </a>
+
+                        <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I'm%20interested%20in%20applying%20for%20higher%20education%20abroad." target="_blank" class="btn-action-circle btn-wa-style" title="Chat on WhatsApp">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.968C16.592 1.971 14.12 1.137 11.491 1.137c-5.44 0-9.866 4.372-9.87 9.802 0 1.714.475 3.39 1.374 4.877L1.935 21.84l6.112-1.586zM18.29 15.01c-.334-.167-1.97-.975-2.279-1.087-.31-.113-.535-.167-.76.167-.224.334-.87 1.087-1.066 1.311-.197.225-.394.25-.727.083-.334-.167-1.41-.521-2.685-1.658-1.01-.9-1.691-2.013-1.89-2.348-.197-.334-.021-.514.145-.68.15-.148.334-.39.5-.584.167-.195.223-.334.334-.556.112-.224.056-.417-.028-.584-.084-.167-.76-1.837-1.042-2.516-.275-.662-.553-.573-.76-.583-.197-.01-.422-.01-.647-.01-.225 0-.59.084-.9.417-.311.334-1.18 1.153-1.18 2.81s1.21 3.255 1.378 3.478c.168.224 2.38 3.635 5.766 5.098.805.348 1.433.555 1.924.711.809.257 1.545.221 2.127.135.649-.097 1.97-.807 2.25-1.587.28-.779.28-1.448.197-1.587-.083-.14-.308-.224-.642-.39z"/>
+                            </svg>
+                            WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -804,9 +874,9 @@
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
                                         <ul class="bullet-list">
-                                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from your previous studies.</li>
-                                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,000 yearly.</li>
-                                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay your primary university program fees only after landing safely in the USA.</li>
+                                            <li><strong>IELTS Waiver Paths:</strong> Obtain secure admissions using basic Medium of Instruction (MOI) certificates from previous studies.</li>
+                                            <li><strong>Automated Academic Aid:</strong> Standard processing secures merit scholarships from $10,000 to $15,005 yearly.</li>
+                                            <li><strong>$0 Advance Tuition Deposit:</strong> Pay university program fees only after landing safely in the USA.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -816,7 +886,7 @@
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
                                         <ul class="bullet-list">
-                                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing your immediate family and kids along with you.</li>
+                                            <li><strong>Spouse (F2) Dependency Plans:</strong> Expert profiling for bringing immediate family and children along.</li>
                                             <li><strong>Consulate Mock Interviews:</strong> Rigorous, repeated mock preparation sessions mimicking the real US embassy format.</li>
                                             <li><strong>Gap Support limits:</strong> Highly flexible file setup securing options for students with gaps and non-traditional profiles.</li>
                                         </ul>
@@ -828,9 +898,9 @@
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
                                         <ul class="bullet-list">
-                                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport in the USA.</li>
-                                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial local housing while choosing your long-term quarters.</li>
-                                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities locally.</li>
+                                            <li><strong>Free Airport Pickup:</strong> Transition smoothly with dedicated transport directly from your arrival airport.</li>
+                                            <li><strong>10-14 Days Free Stay:</strong> Receive up to two weeks of free initial housing while choosing long-term quarters.</li>
+                                            <li><strong>On-Campus Work Pathways:</strong> Active advice to connect you with CPT/OPT part-time opportunities.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -869,7 +939,6 @@
                                             <li><strong>Global Recognition:</strong> Access world-class education from globally respected universities and programs.</li>
                                             <li><strong>Interactive Classrooms:</strong> Learn in rich, multicultural environments that prioritize global networking.</li>
                                             <li><strong>Shorter Study Timelines:</strong> Complete structured 3-year Bachelor's degrees or high-efficiency 1-year Master's options.</li>
-                                            <li><strong>Modern Methodologies:</strong> Experience cutting-edge academic research alongside innovative teaching methods.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -882,14 +951,13 @@
                                         <ul class="bullet-list" style="margin-bottom: 20px;">
                                             <li>Original academic transcripts and certificates.</li>
                                             <li>SOP (Personal Statement) & formal letters of recommendation.</li>
-                                            <li>An updated, professional resume/CV and a valid passport.</li>
+                                            <li>Updated professional resume/CV and valid passport.</li>
                                         </ul>
-
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">English Proficiency Benchmarks:</h4>
                                         <ul class="bullet-list">
-                                            <li><strong>Alternative Certifications:</strong> Standard options like IELTS, TOEFL, and PTE are widely accepted.</li>
-                                            <li><strong>Flexible Language Exams:</strong> Oxford, Duolingo, and LanguageCert pathways are also fully recognized.</li>
-                                            <li><strong>IELTS Exemptions:</strong> Medium of Instruction (MOI) waivers are available for qualifying educational profiles.</li>
+                                            <li>IELTS, TOEFL, and PTE are widely accepted.</li>
+                                            <li>Duolingo and LanguageCert pathways are fully recognized.</li>
+                                            <li>IELTS Exemptions: MOI waivers available for qualifying educational profiles.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -898,33 +966,20 @@
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">📅 Popular Courses & Core Intakes</button>
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Trending Programs for Pakistani Students:</h4>
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Trending Programs:</h4>
                                         <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li><strong>STEM & Business:</strong> Business Analytics, Data Science, Computer Science, Management, and core Engineering fields (Mechanical, Civil, Electrical, Software).</li>
-                                            <li><strong>Creative, Law & Health:</strong> Design, Fashion & Creative Arts, Interior Designing, Health & Life Sciences, Architecture, MBBS, Law, and Finance & Accounting.</li>
+                                            <li>Business Analytics, Data Science, Computer Science, Management, and core Engineering fields.</li>
+                                            <li>Design, Law, MBBS, Health Sciences, and Finance & Accounting.</li>
                                         </ul>
-
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">UK Academic Intake Timelines:</h4>
                                         <table class="briefcase-table">
                                             <thead>
-                                                <tr>
-                                                    <th>Intake Session</th>
-                                                    <th>Duration Period</th>
-                                                </tr>
+                                                <tr><th>Intake Session</th><th>Duration Period</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><strong>Spring</strong></td>
-                                                    <td>January – April</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Summer</strong></td>
-                                                    <td>April – June</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Main Autumn</strong></td>
-                                                    <td>September – December</td>
-                                                </tr>
+                                                <tr><td><strong>Spring</strong></td><td>January – April</td></tr>
+                                                <tr><td><strong>Summer</strong></td><td>April – June</td></tr>
+                                                <tr><td><strong>Main Autumn</strong></td><td>September – December</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -937,34 +992,18 @@
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Annual Tuition Structure:</h4>
                                         <table class="briefcase-table" style="margin-bottom: 25px;">
                                             <thead>
-                                                <tr>
-                                                    <th>Degree Level</th>
-                                                    <th>Tuition Cost (per year)</th>
-                                                </tr>
+                                                <tr><th>Degree Level</th><th>Tuition Cost (per year)</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Bachelor's</td>
-                                                    <td>£10,000 – £20,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Master's</td>
-                                                    <td>£10,000 – £20,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Doctorate</td>
-                                                    <td>£15,000 – £24,000</td>
-                                                </tr>
+                                                <tr><td>Bachelor's</td><td>£10,000 – £20,000</td></tr>
+                                                <tr><td>Master's</td><td>£10,000 – £20,000</td></tr>
+                                                <tr><td>Doctorate</td><td>£15,000 – £24,000</td></tr>
                                             </tbody>
                                         </table>
-
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living Estimates:</h4>
                                         <table class="briefcase-table">
                                             <thead>
-                                                <tr>
-                                                    <th>Expense Category</th>
-                                                    <th>Estimated Range (per month)</th>
-                                                </tr>
+                                                <tr><th>Expense Category</th><th>Estimated Range (per month)</th></tr>
                                             </thead>
                                             <tbody>
                                                 <tr><td>Bills</td><td>£40 – £50</td></tr>
@@ -972,10 +1011,7 @@
                                                 <tr><td>Phone / Mobile data</td><td>£15 – £50</td></tr>
                                                 <tr><td>Local Transport</td><td>£32</td></tr>
                                                 <tr><td>TV Licence</td><td>£12.56</td></tr>
-                                                <tr><td>Books & Study Supplies</td><td>£21</td></tr>
-                                                <tr><td>Leisure Activities</td><td>£21</td></tr>
                                                 <tr><td>Socializing</td><td>£120</td></tr>
-                                                <tr><td>Childcare (If applicable)</td><td>£656</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -987,21 +1023,14 @@
                                     <div class="briefcase-inner">
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Post-Study Work Options (Graduate Route):</h4>
                                         <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li><strong>Graduate Route:</strong> Stay and work in the UK for 18 months after completing Undergraduate or Master's programs.</li>
-                                            <li><strong>Doctoral Route:</strong> Stay up to 3 years after finishing a PhD.</li>
-                                            <li><strong>Skilled Visa:</strong> Full consulting support for transitioning into professional UK skilled visas.</li>
+                                            <li>Graduate Route: Stay and work in the UK for 18 months after completing Undergraduate or Master's programs.</li>
+                                            <li>Doctoral Route: Stay up to 3 years after finishing a PhD.</li>
                                         </ul>
-
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Application Fast-Tracking:</h4>
-                                        <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li><strong>CAS Issuance:</strong> Direct support to secure swift Confirmation of Acceptance for Studies (CAS).</li>
-                                            <li><strong>Priority Processing:</strong> Access priority application reviews for rapid responses.</li>
+                                        <ul class="bullet-list">
+                                            <li>CAS Issuance: Direct support to secure swift Confirmation of Acceptance.</li>
+                                            <li>Priority Processing: Access priority application reviews for rapid responses.</li>
                                         </ul>
-
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">UCAS Clearing Pathways:</h4>
-                                        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">
-                                            Missed out on your preferred choices? Through the UCAS Clearing service, we quickly identify and secure spots for international students at top universities with remaining openings.
-                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -1024,13 +1053,10 @@
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🇭🇺 Why Study in Hungary? (Key Benefits)</button>
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
-                                        <p style="color: var(--text-muted); margin-bottom: 15px; font-size: 0.95rem;">Hungary is emerging as one of Europe's top education destinations, providing an excellent balance of quality and cost.</p>
                                         <ul class="bullet-list">
-                                            <li><strong>World-Class Education:</strong> Access highly regarded learning setups right in the heart of Europe.</li>
                                             <li><strong>Budget-Friendly:</strong> Enjoy exceptionally low tuition fees alongside affordable living costs.</li>
                                             <li><strong>Global Versatility:</strong> Learn via structured, English-taught programs across all degree levels.</li>
-                                            <li><strong>Travel Opportunities:</strong> Gain full Schengen visa access to easily travel across any European country.</li>
-                                            <li><strong>Cultural Enrichment:</strong> Immerse yourself in historically rich, safe, and vibrant student-friendly cities like Budapest, Debrecen, and Pécs.</li>
+                                            <li><strong>Schengen Access:</strong> Gain full Schengen visa access to travel across European member nations.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1040,25 +1066,11 @@
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Hungarian Universities We Work With:</h4>
-                                        <ul class="bullet-list" style="margin-bottom: 20px;">
+                                        <ul class="bullet-list">
                                             <li>International Business School (IBS), Budapest</li>
                                             <li>Budapest Metropolitan University (METU)</li>
                                             <li>University of Pécs</li>
                                             <li>University of Debrecen</li>
-                                            <li>Széchenyi István University (Győr)</li>
-                                            <li>Corvinus University of Budapest</li>
-                                            <li>Hungarian University of Sports Sciences</li>
-                                        </ul>
-
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Popular Programs Chosen by Our Students:</h4>
-                                        <ul class="bullet-list">
-                                            <li>Business & Management</li>
-                                            <li>Marketing & International Relations</li>
-                                            <li>Data Science, AI & Computer Science</li>
-                                            <li>Health Sciences & Public Health</li>
-                                            <li>Engineering (Electrical, Mechanical, Civil)</li>
-                                            <li>Sports Sciences & Coaching</li>
-                                            <li>Tourism & Hospitality</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1070,58 +1082,21 @@
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Tuition Structure (per Semester):</h4>
                                         <table class="briefcase-table" style="margin-bottom: 25px;">
                                             <thead>
-                                                <tr>
-                                                    <th>Program</th>
-                                                    <th>Cost (per Semester / Total)</th>
-                                                </tr>
+                                                <tr><th>Program</th><th>Cost (per Semester)</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><strong>Bachelor's</strong></td>
-                                                    <td>€2,500 – €4,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Master's</strong></td>
-                                                    <td>€2,600 – €4,000</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Foundation / Pathway</strong></td>
-                                                    <td>€2,900 – €6,000 (Total)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Average Consultancy Fee</strong></td>
-                                                    <td>PKR 70,000 – €500</td>
-                                                </tr>
+                                                <tr><td>Bachelor's</td><td>€2,500 – €4,000</td></tr>
+                                                <tr><td>Master's</td><td>€2,600 – €4,000</td></tr>
                                             </tbody>
                                         </table>
-
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Available Scholarships:</h4>
-                                        <ul class="bullet-list" style="margin-bottom: 25px;">
-                                            <li>University-specific merit scholarships.</li>
-                                            <li>Early payment tuition discounts (We assist students in applying for all eligible opportunities).</li>
-                                        </ul>
-
                                         <h4 style="color: var(--primary); margin-bottom: 10px;">Monthly Living in Hungary (Total budget: €300 - €500):</h4>
                                         <table class="briefcase-table">
                                             <thead>
-                                                <tr>
-                                                    <th>Expense Category</th>
-                                                    <th>Estimated Cost (per month)</th>
-                                                </tr>
+                                                <tr><th>Expense Category</th><th>Estimated Cost (per month)</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><strong>Accommodation</strong></td>
-                                                    <td>€100 – €300 (Shared/Private)</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Meals & Transport</strong></td>
-                                                    <td>€100 – €150</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><strong>Student Discounts</strong></td>
-                                                    <td>Highly active & accessible for local transport & national museums</td>
-                                                </tr>
+                                                <tr><td>Accommodation</td><td>€100 – €300</td></tr>
+                                                <tr><td>Meals & Transport</td><td>€100 – €150</td></tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -1131,12 +1106,9 @@
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">English Language Benchmarks:</h4>
                                         <ul class="bullet-list">
-                                            <li><strong>Internal Evaluation:</strong> Many universities readily accept customized internal English tests or online interviews.</li>
-                                            <li><strong>IELTS:</strong> Scores of 5.5 – 6.0 are widely accepted by select institutions.</li>
-                                            <li><strong>Duolingo:</strong> Accepted by several universities across major programs.</li>
-                                            <li><em>We carefully guide you to the perfect university path based on your existing profile.</em></li>
+                                            <li>Internal Evaluation: Many universities accept online tests or interviews.</li>
+                                            <li>IELTS: Scores of 5.5 – 6.0 are accepted by select institutions.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -1145,42 +1117,11 @@
                                 <button class="briefcase-trigger" onclick="toggleFolder(this)">📝 Step-by-Step Simple Visa Process</button>
                                 <div class="briefcase-content">
                                     <div class="briefcase-inner">
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">How We Support Your Visa Success:</h4>
-                                        <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li>Offer Letter coordination directly from your target Hungarian University.</li>
-                                            <li>Comprehensive, compliant Visa Application Support from start to finish.</li>
-                                            <li>Fast-track appointment booking with the Hungarian Embassy.</li>
-                                            <li>Thorough, meticulous Bank Statement & Financial Document Guidance.</li>
-                                            <li>Mandatory European Medical Insurance coordination.</li>
-                                            <li>Mock Prep for your formal Embassy Interview.</li>
-                                        </ul>
-
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Crucial Visa Parameters:</h4>
-                                        <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li><strong>Bank Statement Required:</strong> Minimum €10,000 maintained for 6 to 8 months.</li>
-                                            <li><strong>Visa Fee:</strong> €80 (payable in cash directly at the Embassy).</li>
-                                        </ul>
-
-                                        <h4 style="color: var(--primary); margin-bottom: 10px;">Part-Time Work While Studying:</h4>
                                         <ul class="bullet-list">
-                                            <li>Earn money and gain local work experience with up to 20 hours/week during studies.</li>
-                                            <li>Work full-time during official semester holidays to support your living expenses.</li>
+                                            <li>Offer Letter coordination directly from your target Hungarian University.</li>
+                                            <li>Thorough Bank Statement Guidance (Minimum €10,000 maintained for 6 to 8 months).</li>
+                                            <li>Earn money with up to 20 hours/week of work during active studies.</li>
                                         </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="briefcase-folder">
-                                <button class="briefcase-trigger" onclick="toggleFolder(this)">⚠️ Common Mistakes to Avoid (We Prevent These!)</button>
-                                <div class="briefcase-content">
-                                    <div class="briefcase-inner">
-                                        <ul class="bullet-list" style="margin-bottom: 20px;">
-                                            <li>Incomplete or unorganized visa files.</li>
-                                            <li>Choosing the incorrect program or mismatching university tracks.</li>
-                                            <li>Missing critical admission and embassy deadlines.</li>
-                                            <li>Weak, generic Statement of Purpose (SOP) or motivation letters.</li>
-                                            <li>Improper maintenance of crucial bank statement timelines and financial records.</li>
-                                        </ul>
-                                        <p style="color: var(--primary); font-weight: 700;">Our expert consultancy team guarantees total oversight to safeguard your application from all these common errors!</p>
                                     </div>
                                 </div>
                             </div>
@@ -1217,12 +1158,10 @@
                 <div class="office-name">Islamabad Office G-9</div>
                 <div class="office-address">Unit No.902, Pakland Tower-2, Plot No.4, New Blue Area [F-9/G-9], Islamabad</div>
             </div>
-
             <div class="office-card">
                 <div class="office-name">Islamabad Office G-15</div>
                 <div class="office-address">Office # 01, 1st Floor, Zeb Arcade, G-15 Markaz, Islamabad</div>
             </div>
-
             <div class="office-card">
                 <div class="office-name">United States of America Office</div>
                 <div class="office-address">7105 Villa Park Road, Springfield, VA, United States</div>
@@ -1244,30 +1183,21 @@
             const countryName = card.querySelector('h3').textContent;
             
             if (!isOpen) {
-                // Open sequence
                 if (window.innerWidth >= 992) {
                     card.classList.add('expanded');
                 }
                 content.classList.add('active');
-                
-                // Get accurate total height including padding / contents
                 content.style.maxHeight = content.scrollHeight + "px";
                 button.innerHTML = `Close ${countryName} Briefcase <span class="sign">−</span>`;
                 
-                // Keep inline max-height matching elements so interior folders can scale dynamic height
                 setTimeout(() => {
                     if (content.classList.contains('active')) {
                         content.style.maxHeight = "none";
                     }
                 }, 400);
             } else {
-                // Close sequence: Convert 'none' back to exact current scrollHeight instantly 
                 content.style.maxHeight = content.scrollHeight + "px";
-                
-                // Force layout reflow
-                content.offsetHeight; 
-                
-                // Smoothly slide shut
+                content.offsetHeight; // Force layout reflow
                 content.style.maxHeight = "0px";
                 content.classList.remove('active');
                 card.classList.remove('expanded');
@@ -1281,7 +1211,6 @@
             const container = folder.closest('.country-briefcase-content');
             const allFolders = folder.parentElement.querySelectorAll('.briefcase-folder');
             
-            // Auto close sibling folders
             allFolders.forEach(item => {
                 if (item !== folder) {
                     item.classList.remove('active');
@@ -1291,14 +1220,12 @@
 
             folder.classList.toggle('active');
             
-            // Adjust current folder heights dynamically
             if (folder.classList.contains('active')) {
                 content.style.maxHeight = content.scrollHeight + "px";
             } else {
                 content.style.maxHeight = null;
             }
 
-            // If the parent country card is still opening/open, ensure container reflects adjusted inner heights
             if (container && container.style.maxHeight !== "none" && container.style.maxHeight !== "0px") {
                 setTimeout(() => {
                     container.style.maxHeight = container.scrollHeight + "px";
