@@ -160,17 +160,6 @@
             border: none;
         }
 
-        .btn-primary {
-            background-color: var(--accent);
-            color: #ffffff;
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.25);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(2, 132, 199, 0.35);
-        }
-
         .btn-whatsapp {
             background-color: var(--whatsapp);
             color: #ffffff;
@@ -215,7 +204,6 @@
                 grid-template-columns: repeat(3, 1fr);
                 align-items: start;
             }
-            /* Span expanded destination cards gracefully if needed */
             .country-card.expanded {
                 grid-column: span 3;
             }
@@ -323,7 +311,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Expanded State styling */
         .briefcase-folder.active {
             border-color: var(--accent);
             box-shadow: var(--card-shadow);
@@ -341,7 +328,6 @@
             background: #ffffff;
         }
 
-        /* Inner container holds spacing dynamically */
         .briefcase-inner {
             padding: 24px;
             border-top: 1px solid var(--border-color);
@@ -400,7 +386,6 @@
             box-shadow: 0 15px 35px -10px rgba(13, 71, 161, 0.12);
         }
 
-        /* Balanced 1:1 footprint for both logo aspects */
         .firm-logo {
             width: 140px;
             height: 110px;
@@ -413,14 +398,6 @@
             font-size: 1.15rem;
             color: var(--primary);
             font-weight: 700;
-        }
-
-        /* Grid Services Layout */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
         }
 
         .feature-card {
@@ -465,7 +442,6 @@
             font-weight: 900;
         }
 
-        /* Perks Badge Layout */
         .section-header {
             text-align: center;
             margin-bottom: 40px;
@@ -482,31 +458,6 @@
             margin-top: 5px;
         }
 
-        .perks-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-bottom: 60px;
-        }
-
-        .perk-item {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 16px;
-            border-radius: 12px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            text-align: center;
-            color: var(--primary);
-            transition: var(--transition);
-        }
-
-        .perk-item:hover {
-            background: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-        }
-
         /* Symmetrical White Partners Area */
         .partners-section {
             background-color: #fefefe;
@@ -516,7 +467,6 @@
             margin-bottom: 60px;
         }
 
-        /* Balanced Proportion University Container */
         .partners-container {
             max-width: 550px; 
             margin: 0 auto;
@@ -572,29 +522,6 @@
             color: var(--text-muted);
         }
 
-        /* FAQ Section */
-        .faq-section {
-            margin-bottom: 60px;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-        }
-
-        .faq-question {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .faq-answer {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        /* Toggle Button styling */
         .toggle-briefcase-btn {
             font-size: 0.95rem;
             padding: 12px 24px;
@@ -632,15 +559,9 @@
         }
 
         @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
             .associations-grid {
                 grid-template-columns: 1fr;
                 max-width: 400px;
-            }
-            .perks-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             .partners-container {
                 max-width: 100%;
@@ -666,15 +587,12 @@
             .advisor-card h1 {
                 font-size: 1.8rem;
             }
-            .perks-grid {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Catchy Quote Announcement Bar (Clean White Background, No Emojis/Stars) -->
+    <!-- Catchy Quote Announcement Bar -->
     <div class="top-quote-banner">
         Your global future is waiting. Let's make it happen.
     </div>
@@ -689,9 +607,6 @@
                 <p class="hero-desc">
                     Expertly navigating admissions, visa processing, and entry profiles for elite world destinations. We provide secure, end-to-end consulting to ensure your study plans are a complete success.
                 </p>
-                <a href="https://wa.me/923379226441?text=Hello%20Syed%20Nabeel,%20I%20am%20interested%20in%20applying%20for%20global%20study%20options." class="btn btn-primary" target="_blank">
-                    Explore Admissions Options &rarr;
-                </a>
             </div>
 
             <!-- Advisor Profile Card -->
@@ -1080,16 +995,18 @@
                                 </div>
                             </div>
                             <!-- Hungary Folder 4 -->
-                            <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
-                            <div class="briefcase-content">
-                                <div class="briefcase-inner">
-                                    <h4 style="color: var(--primary); margin-bottom: 10px;">English Language Benchmarks:</h4>
-                                    <ul class="bullet-list">
-                                        <li><strong>Internal Evaluation:</strong> Many universities readily accept customized internal English tests or online interviews.</li>
-                                        <li><strong>IELTS:</strong> Scores of 5.5 – 6.0 are widely accepted by select institutions.</li>
-                                        <li><strong>Duolingo:</strong> Accepted by several universities across major programs.</li>
-                                        <li><em>We carefully guide you to the perfect university path based on your existing profile.</em></li>
-                                    </ul>
+                            <div class="briefcase-folder">
+                                <button class="briefcase-trigger" onclick="toggleFolder(this)">🛂 Admission & English Requirements</button>
+                                <div class="briefcase-content">
+                                    <div class="briefcase-inner">
+                                        <h4 style="color: var(--primary); margin-bottom: 10px;">English Language Benchmarks:</h4>
+                                        <ul class="bullet-list">
+                                            <li><strong>Internal Evaluation:</strong> Many universities readily accept customized internal English tests or online interviews.</li>
+                                            <li><strong>IELTS:</strong> Scores of 5.5 – 6.0 are widely accepted by select institutions.</li>
+                                            <li><strong>Duolingo:</strong> Accepted by several universities across major programs.</li>
+                                            <li><em>We carefully guide you to the perfect university path based on your existing profile.</em></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <!-- Hungary Folder 5 -->
@@ -1163,46 +1080,6 @@
             </div>
         </div>
 
-        <!-- Perks Section -->
-        <div class="section-header">
-            <h2>🌟 Standard Relocation Perks</h2>
-            <p>Our complete roadmap covers your timeline from day one down to the landing.</p>
-        </div>
-
-        <div class="perks-grid">
-            <div class="perk-item">IELTS/MOI Admissions</div>
-            <div class="perk-item">Spouse & Dependent Prep</div>
-            <div class="perk-item">Airport Pickup Coordination</div>
-            <div class="perk-item">Health Insurance Setup</div>
-            <div class="perk-item">Accommodation Guidance</div>
-            <div class="perk-item">Arrival On-Ground Help</div>
-            <div class="perk-item">Flexible Tuition Plans</div>
-            <div class="perk-item">Schengen Access (Hungary)</div>
-        </div>
-
-        <!-- FAQs Section -->
-        <div class="faq-section">
-            <div class="section-header" style="text-align: left;">
-                <h2>Frequently Asked Questions</h2>
-                <p>Crucial guidelines for your international study plans.</p>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Do I absolutely need IELTS/TOEFL to study abroad?</div>
-                <div class="faq-answer">Not always. For several partners in the USA, UK, and Hungary, we can utilize a Medium of Instruction (MOI) certificate from your previous institution as proof of English proficiency.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What makes Hungary a great option?</div>
-                <div class="faq-answer">Hungary offers high-quality, English-taught degree programs with much lower living and tuition costs compared to Western Europe. Plus, a Hungarian student visa grants you access to the entire Schengen zone!</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Can I travel and apply with my spouse?</div>
-                <div class="faq-answer">Yes, especially for major programs in countries like the USA and UK that allow dependent configurations. We handle full profiling for subsequent or simultaneous dependent visas.</div>
-            </div>
-        </div>
-
         <!-- Offices Network Section -->
         <div class="section-header" id="offices">
             <h2>📍 Our Global Office Network</h2>
@@ -1239,7 +1116,6 @@
 
     <!-- Active Accordion Script with Dynamic Height Calculation -->
     <script>
-        // Main function to expand/collapse parent Country Briefcase
         function toggleCountryBriefcase(id, button) {
             const content = document.getElementById(id);
             const card = content.closest('.country-card');
@@ -1248,7 +1124,6 @@
             const countryName = card.querySelector('h3').textContent;
             
             if (!isOpen) {
-                // Expand grid row on desktop to avoid squeezing deep content
                 if (window.innerWidth >= 992) {
                     card.classList.add('expanded');
                 }
@@ -1257,16 +1132,14 @@
                 sign.textContent = '−';
                 button.innerHTML = `Close ${countryName} Briefcase <span class="sign">−</span>`;
                 
-                // Once transition finishes, remove restriction so nested folders expand freely
                 setTimeout(() => {
                     if (content.classList.contains('active')) {
                         content.style.maxHeight = "none";
                     }
                 }, 350);
             } else {
-                // Return to explicit scrollHeight to enable smooth transition back to 0
                 content.style.maxHeight = content.scrollHeight + "px";
-                content.offsetHeight; // Force reflow
+                content.offsetHeight; 
                 content.classList.remove('active');
                 card.classList.remove('expanded');
                 content.style.maxHeight = null;
@@ -1275,13 +1148,11 @@
             }
         }
 
-        // Sub-folder toggling function (Nested Accordions)
         function toggleFolder(button) {
             const folder = button.parentElement;
             const content = folder.querySelector('.briefcase-content');
             const allFolders = folder.parentElement.querySelectorAll('.briefcase-folder');
             
-            // Close other open folders inside the same briefcase
             allFolders.forEach(item => {
                 if (item !== folder) {
                     item.classList.remove('active');
@@ -1289,7 +1160,6 @@
                 }
             });
 
-            // Toggle active state for current folder
             folder.classList.toggle('active');
             
             if (folder.classList.contains('active')) {
