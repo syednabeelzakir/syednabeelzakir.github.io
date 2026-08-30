@@ -3,148 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study in USA with Syed Nabeel</title>
+    <title>Study Abroad with Syed Nabeel | Global Education Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* USA Color Palette Variables */
-:root {
-    --us-navy: #0A192F;         /* Deep Freedom Navy */
-    --us-red: #D92D20;          /* Crimson Red */
-    --us-blue: #0052FF;         /* Vibrant Electric Blue */
-    --us-bg: #F8FAFC;           /* Ice White / Light Slate */
-    --whatsapp: #22c55e;        
-    --whatsapp-hover: #16a34a;   
-    --text-main: #1E293B;        
-    --text-muted: #64748B;       
-    --border-color: #E2E8F0;     
-}
+        /* Modern Reset & Variables - Premium Global Aesthetic */
+        :root {
+            --primary: #0f172a;          /* Slate Navy */
+            --primary-light: #1e293b;    /* Charcoal Navy */
+            --secondary: #0d9488;        /* Vivid Teal - Accent color signaling growth */
+            --accent: #0f766e;           /* Deep Teal */
+            --whatsapp: #22c55e;         /* Direct Action Green */
+            --whatsapp-hover: #16a34a;   /* Darker Green */
+            --text-main: #334155;        /* Soft Charcoal */
+            --text-muted: #64748b;       /* Cool Gray */
+            --bg-light: #f8fafc;         /* Light Ice Gray */
+            --border-color: #e2e8f0;     /* Border soft light */
+            --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-/* Top Banner with Flag Header */
-.top-quote-banner {
-    background: linear-gradient(90deg, #0A192F 0%, #1E293B 100%);
-    color: #FFFFFF;
-    text-align: center;
-    padding: 14px 20px;
-    font-size: clamp(0.95rem, 2.8vw, 1.15rem);
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-bottom: 3px solid var(--us-red);
-}
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif; 
+        }
 
-.flag-icon {
-    font-size: 1.4rem;
-    line-height: 1;
-}
+        body { 
+            background-color: #fcfcfd; 
+            color: var(--text-main); 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
 
-.usa-badge-pill {
-    background: var(--us-red);
-    color: #FFFFFF;
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-}
+        /* Top Quote Banner */
+        .top-quote-banner {
+            background: #ffffff;
+            color: var(--secondary);
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(1rem, 2.8vw, 1.25rem);
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-/* Card Gradient Top Bar (Navy to Red) */
-.advisor-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, var(--us-navy) 0%, var(--us-red) 100%);
-}
+        /* Main Wrapper */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-/* Typography & Accent Styles */
-.brand-subtext {
-    color: var(--us-red);
-    font-weight: 800;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-top: 2px;
-}
+        /* Hero / Advisor Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
 
-.tagline {
-    color: var(--us-navy);
-    font-weight: 700;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 15px;
-}
+        .advisor-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
 
-.stat-number {
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: var(--us-red);
-}
+        .advisor-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
 
-.btn-call-style {
-    background-color: var(--us-navy);
-}
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
 
-.btn-call-style:hover {
-    background-color: var(--us-blue);
-}
-        
-<!-- Advisor Card HTML -->
-<div class="advisor-card">
-    <div class="avatar-wrapper">
-        <img src="your-photo.jpg" alt="Syed Nabeel" class="advisor-img">
-    </div>
-    
-    <h2>Syed Nabeel</h2>
-    <div class="brand-subtext">STUDY WITH NABIL</div>
-    <div class="tagline">US ADMISSIONS & F-1 VISA SPECIALIST</div>
+        .advisor-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+        }
 
-    <p class="intro-text">
-        Specializing in high-yield US university admissions, F-1 student visas, and mock interview prep for elite American destinations.
-    </p>
+        .advisor-card h1 {
+            font-size: 2.1rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
 
-    <!-- Stats Grid -->
-    <div class="stats-grid">
-        <div class="stat-item">
-            <span class="stat-number">127+</span>
-            <span class="stat-label">US & Global Admits</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">89%</span>
-            <span class="stat-label">Visa Success Rate</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">$0</span>
-            <span class="stat-label">Advance Deposit</span>
-        </div>
-    </div>
+        .tagline {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
 
-    <!-- Contact Actions -->
-    <div class="profile-actions">
-        <div class="phone-display-badge">
-            <div class="phone-info-text">
-                <span class="phone-label">Direct Helpline</span>
-                <span class="phone-value">03379226441</span>
-            </div>
-            <div class="pulse-dot-container">
-                <div class="pulse-dot"></div>
-                <div class="static-dot"></div>
-            </div>
-        </div>
-        
-        <div class="action-buttons-row">
-            <a href="tel:03379226441" class="btn-action-circle btn-call-style">Call Helpline</a>
-            <a href="https://wa.me/923379226441" class="btn-action-circle btn-wa-style">WhatsApp</a>
-        </div>
-    </div>
-</div>
+        .intro-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            max-width: 550px;
+            margin: 0 auto 25px auto;
+        }
+
         /* Updated Trust & Success Counter Section */
         .stats-grid {
             display: grid;
