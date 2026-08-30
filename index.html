@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         /* Modern Reset & Variables - Premium Global Aesthetic */
         :root {
@@ -766,6 +767,33 @@
             .floating-whatsapp svg {
                 width: 26px;
                 height: 26px;
+            }
+        }
+        /* Force single-column vertical stack & center alignment on Desktop */
+        @media (min-width: 769px) {
+            .hero-section,
+            .destinations-grid,
+            .associations-grid,
+            .offices-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+            }
+
+            .hero-content,
+            .advisor-card,
+            .country-card,
+            .firm-card,
+            .office-card {
+                width: 100% !important;
+                max-width: 650px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .hero-content {
+                margin-bottom: 40px !important;
             }
         }
     </style>
